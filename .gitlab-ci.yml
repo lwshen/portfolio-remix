@@ -1,0 +1,20 @@
+image: node:16.17.0
+
+before_script:
+  - npm install --registry https://registry.npmmirror.com
+
+cache:
+  paths:
+    - node_modules
+
+stages:
+  - build
+
+build_job:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - public
+    expire_in: 1 week
