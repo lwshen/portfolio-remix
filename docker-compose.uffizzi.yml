@@ -1,0 +1,11 @@
+version: "3.0"
+
+# uffizzi integration
+x-uffizzi:
+  ingress:
+    service: portfolio
+    port: 3000
+
+services:
+  portfolio:
+    image: "${PORTFOLIO_IMAGE}"
