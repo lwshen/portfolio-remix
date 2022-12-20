@@ -1,0 +1,40 @@
+.github/
+docker-compose.uffizzi.yml
+
+CHANGELOG.md
+helm/
+
+# FROM .gitignore. Copy them here until https://github.com/prettier/prettier/issues/8048 is done
+
+node_modules
+
+.cache
+build
+public/build
+.env
+
+.DS_Store
+
+# Log files
+npm-debug.log*
+lerna-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+.history
+.ionide
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+.yarn
+yarn-error.log
+
+junit.xml
+coverage/
+web-types.json
+
+pnpm-lock.yaml
