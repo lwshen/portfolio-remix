@@ -7,8 +7,8 @@
     "start": "remix-serve build",
     "typecheck": "tsc -b",
     "lint:eslint": "eslint --max-warnings 0 --ext .js,.jsx,.ts,.tsx .",
-    "lint:style": "prettier . -c",
-    "lint:fix": "npm run lint:eslint --fix && npx prettier . --write"
+    "lint:style": "prettier . --check",
+    "lint:fix": "npx prettier . --write && npm run lint:eslint --fix"
   },
   "dependencies": {
     "@remix-run/node": "^1.8.2",
@@ -23,6 +23,8 @@
     "@remix-run/eslint-config": "^1.8.2",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -31,10 +33,5 @@
   },
   "engines": {
     "node": ">=14"
-  },
-  "eslintIgnore": [
-    "/node_modules",
-    "/build",
-    "/public/build"
-  ]
+  }
 }
