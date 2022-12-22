@@ -12,6 +12,7 @@ node_modules
 build
 public/build
 .env
+app/styles
 
 .DS_Store
 
