@@ -1,6 +1,7 @@
 import type { LinksFunction } from '@remix-run/node';
 import * as Avatar from '@radix-ui/react-avatar';
 
+import { Name } from '~/components/Name';
 import AvatarImage from '~/assets/image/avatar.jpeg';
 import stylesUrl from '~/styles/components/avatar.css';
 
@@ -24,6 +25,7 @@ export default function Index() {
       </Avatar.Root>
       <p>Slinvent</p>
       <p className="text-blue-700">Slinvent</p>
+      <Name className="text-bold text-4xl" values={['aaa', 'bbb']} />
     </div>
   );
 }
