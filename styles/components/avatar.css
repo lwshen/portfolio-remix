@@ -1,0 +1,27 @@
+.AvatarRoot {
+  @apply border rounded-full border-gray-100;
+  @apply inline-flex;
+  @apply items-center justify-center;
+  vertical-align: middle;
+  overflow: hidden;
+  user-select: none;
+  width: 45px;
+  height: 45px;
+}
+
+.AvatarImage {
+  @apply w-full h-full;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.AvatarFallback {
+  @apply w-full h-full;
+  @apply text-gray-600;
+  @apply flex;
+  @apply items-center justify-center;
+  background-color: white;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 500;
+}
