@@ -1,12 +1,9 @@
 .AvatarRoot {
   @apply border rounded-full border-gray-100;
   @apply inline-flex;
-  @apply items-center justify-center;
-  vertical-align: middle;
-  overflow: hidden;
+  @apply items-center justify-center align-middle;
+  @apply overflow-hidden;
   user-select: none;
-  width: 45px;
-  height: 45px;
 }
 
 .AvatarImage {

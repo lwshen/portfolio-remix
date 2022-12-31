@@ -3,7 +3,7 @@ export type NameProps = {
   values: Array<string>;
 };
 
-export function Name({ className, values }: NameProps) {
+export default function Name({ className, values }: NameProps) {
   return (
     <div>
       {values.map((value, idx) => {
