@@ -9,3 +9,6 @@ x-uffizzi:
 services:
   portfolio:
     image: "${PORTFOLIO_IMAGE}"
+    environment:
+      BLOG_URL: "https://slw.im/"
+      BEIAN: "沪ICP备12345678号"
