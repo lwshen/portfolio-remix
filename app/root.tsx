@@ -14,6 +14,7 @@ import { BLOG_URL, BEIAN } from '~/server/config.server';
 import globalStylesUrl from '~/styles/global.css';
 import tailwindStylesUrl from '~/styles/tailwind.css';
 import type { Env } from '~/types/global';
+import AppLayout from '~/components/layout/AppLayout';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -42,17 +43,17 @@ export async function loader() {
   });
 }
 
-export default function App() {
+function Document({ children, title = `Slinvent` }: { children: React.ReactNode; title?: string }) {
   const data = useLoaderData<typeof loader>();
   return (
     <html lang="en">
       <head>
         <Meta />
-        <title>Slinvent</title>
+        <title>{title}</title>
         <Links />
       </head>
       <body>
-        <Outlet />
+        {children}
         <ScrollRestoration />
         <script
           dangerouslySetInnerHTML={{
@@ -63,5 +64,15 @@ export default function App() {
         <LiveReload />
       </body>
     </html>
+  );
+}
+
+export default function App() {
+  return (
+    <Document>
+      <AppLayout>
+        <Outlet />
+      </AppLayout>
+    </Document>
   );
 }
