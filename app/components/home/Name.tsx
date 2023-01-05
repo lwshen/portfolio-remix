@@ -1,18 +1,20 @@
+import { useState } from 'react';
+
 export type NameProps = {
   className?: string;
   values: Array<string>;
 };
 
 export default function Name({ className, values }: NameProps) {
+  const [index, setIndex] = useState(0);
+
+  setTimeout(() => {
+    setIndex((index + 1) % values.length);
+  }, 3000);
+
   return (
     <div>
-      {values.map((value, idx) => {
-        return (
-          <p key={idx} className={`${className}`}>
-            {value}
-          </p>
-        );
-      })}
+      <span className={`${className}`}>{values[index]}</span>
     </div>
   );
 }
