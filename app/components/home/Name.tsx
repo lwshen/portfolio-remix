@@ -12,11 +12,10 @@ export default function Name({ className, values }: NameProps) {
   const [isShow, setIsShow] = useState(true);
 
   setTimeout(() => {
-    setIndex((index + 1) % values.length);
-  }, durationTime * 1000);
-
-  setTimeout(() => {
     setIsShow(!isShow);
+    if (!isShow) {
+      setIndex((index + 1) % values.length);
+    }
   }, durationTime * 500);
 
   const variants = {
