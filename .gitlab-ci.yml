@@ -1,7 +1,8 @@
 image: node:16.17.0
 
 before_script:
-  - npm install --registry https://registry.npmmirror.com
+  - npm config set registry https://registry.npmmirror.com
+  - npm install -g pnpm
 
 cache:
   paths:
@@ -13,4 +14,4 @@ stages:
 build_job:
   stage: build
   script:
-    - npm run build
+    - pnpm run build
