@@ -7,6 +7,7 @@ RUN pnpm install
 
 COPY ./ .
 
+RUN npm install -g pnpm
 RUN pnpm run build
 ENV NODE_ENV=production
 
