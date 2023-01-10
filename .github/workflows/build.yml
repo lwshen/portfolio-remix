@@ -21,8 +21,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm run lint:style
-      - run: npm run lint:eslint
-      - run: npm run typecheck
-      - run: npm run build
+      - run: pnpm install
+      - run: pnpm run lint:style
+      - run: pnpm run lint:eslint
+      - run: pnpm run typecheck
+      - run: pnpm run build
