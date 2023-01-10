@@ -14,7 +14,3 @@ build_job:
   stage: build
   script:
     - npm run build
-  artifacts:
-    paths:
-      - public
-    expire_in: 1 week
