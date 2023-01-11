@@ -36,10 +36,10 @@ tasks:
         fi
       fi
 
-  - init: yarn install
+  - init: pnpm install
     command: |
-      yarn run build
-      yarn run dev
+      pnpm run build
+      pnpm run dev
 
 vscode:
   extensions:
