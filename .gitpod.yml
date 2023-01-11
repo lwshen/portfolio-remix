@@ -36,10 +36,10 @@ tasks:
         fi
       fi
 
-  - init: npm install
+  - init: yarn install
     command: |
-      npm run build
-      npm run dev
+      yarn run build
+      yarn run dev
 
 vscode:
   extensions:
