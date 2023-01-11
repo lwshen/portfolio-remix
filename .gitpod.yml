@@ -36,10 +36,10 @@ tasks:
         fi
       fi
 
-  - init: npm install
+  - init: pnpm install
     command: |
-      npm run build
-      npm run dev
+      pnpm run build
+      pnpm run dev
 
 vscode:
   extensions:
