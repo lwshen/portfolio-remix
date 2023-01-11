@@ -2,11 +2,9 @@ FROM node:16-alpine
 
 WORKDIR /app
 
-COPY ./package.json ./
-RUN yarn install
-
 COPY ./ .
 
+RUN yarn install --frozen-lockfile
 RUN yarn run build
 ENV NODE_ENV=production
 
