@@ -6,14 +6,6 @@ helm/
 
 # FROM .gitignore. Copy them here until https://github.com/prettier/prettier/issues/8048 is done
 
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
-
 node_modules
 
 .cache
