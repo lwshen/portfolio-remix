@@ -3,13 +3,12 @@ FROM node:16-alpine
 WORKDIR /app
 
 COPY ./package.json ./
-RUN npm install -g pnpm
-RUN pnpm install
+RUN yarn install
 
 COPY ./ .
 
-RUN pnpm run build
+RUN yarn run build
 ENV NODE_ENV=production
 
-CMD ["pnpm", "run" ,"start"]
+CMD ["yarn", "run" ,"start"]
 EXPOSE 3000
