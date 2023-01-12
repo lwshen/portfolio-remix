@@ -22,9 +22,10 @@ export default function HomeHeader() {
   return (
     <div className="px-16 py-6 text-right align-middle">
       <div className="space-x-4">
-        {navList.map((nav) => {
+        {navList.map((nav, idx) => {
           return (
             <NavLink
+              key={idx}
               to={nav.url}
               className={({ isActive }) => (isActive ? activeClassName : undefined)}
             >
