@@ -10,7 +10,16 @@ export default function AppLayout({ children }: AppLayoutProps) {
   return (
     <Fragment>
       <HomeHeader />
-      {children}
+      <div
+        style={{
+          fontFamily: 'system-ui, sans-serif',
+          lineHeight: '1.4',
+          margin: '0 auto',
+          maxWidth: '820px'
+        }}
+      >
+        {children}
+      </div>
       <HomeFooter />
     </Fragment>
   );
