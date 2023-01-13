@@ -3,6 +3,7 @@ image: node:16.17.0
 before_script:
   - npm config set registry https://registry.npmmirror.com
   - npm install -g pnpm
+  - pnpm install
 
 cache:
   paths:
