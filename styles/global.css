@@ -1,10 +1,38 @@
+@font-face {
+  font-family: 'smiley-sans';
+  src: url('/fonts/SmileySans-Oblique.otf.woff2') format('woff2'),
+    url('/fonts/SmileySans-Oblique.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'oppo-sans';
+  src: url('/fonts/OPlusSans3-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html,
 body {
   @apply p-0;
   @apply m-0;
   @apply bg-gray-100;
+  font-family: 'oppo-sans';
 }
 
 html {
   transition: background-color 0.2s, color 0.2s;
+}
+
+.smiley-sans {
+  font-family: 'smiley-sans';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.oppo-sans {
+  font-family: 'oppo-sans';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
