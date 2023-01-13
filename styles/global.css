@@ -8,3 +8,17 @@ body {
 html {
   transition: background-color 0.2s, color 0.2s;
 }
+
+@font-face {
+  font-family: 'SmileySans';
+  src: url('/fonts/SmileySans-Oblique.otf.woff2') format('woff2'),
+    url('/fonts/SmileySans-Oblique.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.smiley-sans {
+  font-family: 'SmileySans';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
