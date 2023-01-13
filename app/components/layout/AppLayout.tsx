@@ -12,7 +12,6 @@ export default function AppLayout({ children }: AppLayoutProps) {
       <HomeHeader />
       <div
         style={{
-          fontFamily: 'system-ui, sans-serif',
           lineHeight: '1.4',
           margin: '0 auto',
           maxWidth: '820px'
