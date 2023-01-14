@@ -1,7 +1,7 @@
 export default function Project() {
   return (
     <div>
-      <p className="text-3xl text-bold jin-bu-ti">Projects</p>
+      <p className="text-3xl font-bold jin-bu-ti">Projects</p>
     </div>
   );
 }

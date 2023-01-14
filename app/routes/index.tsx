@@ -1,8 +1,7 @@
-import Home from '~/components/home/Home';
-import { links as avatarLinks } from '~/components/home/Avatar';
+import Home, { links as homeLinks } from '~/components/home/Home';
 
 export function links() {
-  return [...avatarLinks()];
+  return [...homeLinks()];
 }
 
 export default function Index() {
