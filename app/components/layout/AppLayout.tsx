@@ -14,6 +14,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
         style={{
           lineHeight: '1.4',
           margin: '0 auto',
+          padding: '0 40px',
           maxWidth: '820px'
         }}
       >
