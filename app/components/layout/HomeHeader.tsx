@@ -21,7 +21,7 @@ export default function HomeHeader() {
   const activeClassName = 'underline';
   return (
     <div className="px-16 py-6 text-right align-middle">
-      <div className="space-x-4">
+      <div className="space-x-4 jin-bu-ti">
         {navList.map((nav, idx) => {
           return (
             <NavLink
