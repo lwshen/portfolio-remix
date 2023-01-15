@@ -13,7 +13,8 @@ import {
 import { withEmotionCache } from '@emotion/react';
 import { ChakraProvider } from '@chakra-ui/react';
 
-import { ServerStyleContext, ClientStyleContext } from './context';
+import { ServerStyleContext, ClientStyleContext } from '~/context';
+import { theme } from '~/theme';
 import { BLOG_URL, BEIAN } from '~/server/config.server';
 import globalStylesUrl from '~/styles/global.css';
 import tailwindStylesUrl from '~/styles/tailwind.css';
@@ -52,7 +53,6 @@ interface DocumentProps {
   title?: string;
 }
 
-// function Document({ children, title = `Slinvent` }: { children: React.ReactNode; title?: string })
 const Document = withEmotionCache(
   ({ children, title = `Slinvent` }: DocumentProps, emotionCache) => {
     const data = useLoaderData<typeof loader>();
@@ -67,15 +67,12 @@ const Document = withEmotionCache(
       const tags = emotionCache.sheet.tags;
       emotionCache.sheet.flush();
       tags.forEach((tag) => {
-        (
-          emotionCache.sheet as unknown as {
-            _insertTag: (tag: StyleSheet['tags'][number]) => unknown;
-          }
-        )._insertTag(tag);
+        (emotionCache.sheet as any) // eslint-disable-line @typescript-eslint/no-explicit-any
+          ._insertTag(tag);
       });
       // reset cache to reapply global styles
       clientStyleData?.reset();
-    }, [clientStyleData, emotionCache.sheet]);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
       <html lang="en">
@@ -110,7 +107,7 @@ const Document = withEmotionCache(
 export default function App() {
   return (
     <Document>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <AppLayout>
           <Outlet />
         </AppLayout>

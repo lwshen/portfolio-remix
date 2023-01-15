@@ -7,8 +7,8 @@ import { renderToPipeableStream, renderToString } from 'react-dom/server';
 import { CacheProvider } from '@emotion/react';
 import createEmotionServer from '@emotion/server/create-instance';
 
-import { ServerStyleContext } from './context';
-import createEmotionCache from './createEmotionCache';
+import { ServerStyleContext } from '~/context';
+import createEmotionCache from '~/createEmotionCache';
 
 const ABORT_DELAY = 5000;
 
