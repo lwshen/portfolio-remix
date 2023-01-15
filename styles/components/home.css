@@ -1,0 +1,16 @@
+.highlight {
+  @apply text-black font-bold;
+}
+
+.separator-root {
+  @apply bg-neutral-300;
+  @apply mx-auto;
+}
+.separator-root[data-orientation='horizontal'] {
+  height: 1px;
+  width: 150px;
+}
+.separator-root[data-orientation='vertical'] {
+  height: 100%;
+  width: 1px;
+}
