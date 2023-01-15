@@ -67,11 +67,15 @@ const Document = withEmotionCache(
       const tags = emotionCache.sheet.tags;
       emotionCache.sheet.flush();
       tags.forEach((tag) => {
-        (emotionCache.sheet as any)._insertTag(tag);
+        (
+          emotionCache.sheet as unknown as {
+            _insertTag: (tag: StyleSheet['tags'][number]) => unknown;
+          }
+        )._insertTag(tag);
       });
       // reset cache to reapply global styles
       clientStyleData?.reset();
-    }, []);
+    }, [clientStyleData, emotionCache.sheet]);
 
     return (
       <html lang="en">
