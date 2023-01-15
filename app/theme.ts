@@ -15,5 +15,13 @@ export const theme = extendTheme({
         }
       }
     }
+  },
+  components: {
+    Divider: {
+      baseStyle: {
+        borderColor: 'blackAlpha.400',
+        borderWidth: '1px'
+      }
+    }
   }
 });

@@ -1,5 +1,5 @@
 import type { LinksFunction } from '@remix-run/node';
-import * as Separator from '@radix-ui/react-separator';
+import { Center, Divider } from '@chakra-ui/react';
 import Avatar, { links as avatarLinks } from '~/components/home/Avatar';
 import AvatarImage from '~/assets/image/avatar.jpeg';
 import Name from '~/components/home/Name';
@@ -13,6 +13,16 @@ export const links: LinksFunction = () => {
       href: styles
     }
   ];
+};
+
+const Separator = () => {
+  return (
+    <Center>
+      <div className="w-40">
+        <Divider size="sm" orientation="horizontal" />
+      </div>
+    </Center>
+  );
 };
 
 export default function Home() {
@@ -88,14 +98,14 @@ export default function Home() {
       <p>
         I am working on a variety of technologies including Web Development and Backend Development.
       </p>
-      <Separator.Root className="separator-root" decorative />
+      <Separator />
       <p className="text-xl">Technologies and Tools</p>
       <div className="flex flex-row flex-wrap">
         {skills.map((skill, idx) => {
           return <img key={idx} className="p-1" src={skill.img} alt={skill.label} />;
         })}
       </div>
-      <Separator.Root className="separator-root" decorative />
+      <Separator />
       <p>
         Find me on{' '}
         <a className="text-black underline" href="https://github.com/lwshen">
