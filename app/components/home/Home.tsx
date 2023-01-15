@@ -89,7 +89,7 @@ export default function Home() {
         I am working on a variety of technologies including Web Development and Backend Development.
       </p>
       <Separator.Root className="separator-root" decorative />
-      <p className="text-xl">My Tech Stack</p>
+      <p className="text-xl">Technologies and Tools</p>
       <div className="flex flex-row flex-wrap">
         {skills.map((skill, idx) => {
           return <img key={idx} className="p-1" src={skill.img} alt={skill.label} />;
