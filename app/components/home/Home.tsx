@@ -85,7 +85,7 @@ export default function Home() {
   return (
     <div className="space-y-4 text-gray-700">
       <div className="flex flex-row items-center space-x-8">
-        <Avatar className="w-16 h-16" imgUrl={AvatarImage} fallback="Ryo" />
+        <Avatar imgUrl={AvatarImage} fallback="Ryo" size="lg" />
         <div className="smiley-sans">
           <Name className="font-bold text-3xl text-black" values={names} />
           <p>Software Developer / Shanghai</p>
