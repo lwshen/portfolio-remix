@@ -1,5 +1,5 @@
 import type { LinksFunction } from '@remix-run/node';
-import * as AvatarWrap from '@radix-ui/react-avatar';
+import { Avatar as AvatarWrap } from '@chakra-ui/react';
 import styles from '~/styles/components/avatar.css';
 
 export const links: LinksFunction = () => {
@@ -12,18 +12,11 @@ export const links: LinksFunction = () => {
 };
 
 export type AvatarProps = {
-  className?: string;
   imgUrl: string;
   fallback?: string;
+  size?: string;
 };
 
-export default function Avatar({ className, imgUrl, fallback }: AvatarProps) {
-  return (
-    <AvatarWrap.Root className={`AvatarRoot ${className || ''}`}>
-      <AvatarWrap.Image className="AvatarImage" src={imgUrl} alt="Avatar Image" />
-      <AvatarWrap.Fallback className="AvatarFallback" delayMs={600}>
-        {fallback || ''}
-      </AvatarWrap.Fallback>
-    </AvatarWrap.Root>
-  );
+export default function Avatar({ imgUrl, fallback, size }: AvatarProps) {
+  return <AvatarWrap size={size || 'md'} name={fallback || ''} src={imgUrl} />;
 }
