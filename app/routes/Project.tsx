@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import PortfolioImage from '~/assets/image/project/portfolio.png';
+import DotfilesImage from '~/assets/image/project/dotfiles.png';
 
 export default function Project() {
   const projects = [
@@ -20,6 +21,12 @@ export default function Project() {
       previewImg: PortfolioImage,
       githubUrl: 'https://github.com/lwshen/portfolio-remix',
       demoUrl: 'https://portfolio.ryos.dev'
+    },
+    {
+      title: 'dotfiles',
+      content: '💻 macOS / Ubuntu dotfiles',
+      previewImg: DotfilesImage,
+      githubUrl: 'https://github.com/lwshen/dotfiles'
     }
   ];
 
@@ -37,12 +44,16 @@ export default function Project() {
                 <Stack mt="6" spacing="3">
                   <Heading size="md">{project.title}</Heading>
                   <Text>{project.content}</Text>
-                  <Link href={project.githubUrl} isExternal>
-                    Github <ExternalLinkIcon mx="2px" />
-                  </Link>
-                  <Link href={project.demoUrl} isExternal>
-                    Demo <ExternalLinkIcon mx="2px" />
-                  </Link>
+                  {project.githubUrl && (
+                    <Link href={project.githubUrl} isExternal>
+                      Github <ExternalLinkIcon mx="2px" />
+                    </Link>
+                  )}
+                  {project.demoUrl && (
+                    <Link href={project.demoUrl} isExternal>
+                      Demo <ExternalLinkIcon mx="2px" />
+                    </Link>
+                  )}
                 </Stack>
               </CardBody>
             </Card>
