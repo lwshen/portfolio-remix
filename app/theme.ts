@@ -10,8 +10,7 @@ export const theme = extendTheme({
       // styles for the `a`
       a: {
         _hover: {
-          textDecoration: 'underline',
-          fontWeight: 'bold'
+          textDecoration: 'underline'
         }
       }
     }
