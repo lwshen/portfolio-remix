@@ -4,6 +4,7 @@
   "useTabs": false,
   "printWidth": 100,
   "singleQuote": true,
-  "trailingComma": "none",
-  "bracketSameLine": false
+  "trailingComma": "es5",
+  "bracketSameLine": false,
+  "arrowParens": "avoid"
 }
