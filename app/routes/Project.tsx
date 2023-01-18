@@ -7,11 +7,11 @@ import {
   Link,
   SimpleGrid,
   Stack,
-  Text
+  Text,
 } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
-import PortfolioImage from '~/assets/image/project/portfolio.png';
 import DotfilesImage from '~/assets/image/project/dotfiles.png';
+import PortfolioImage from '~/assets/image/project/portfolio.png';
 
 export default function Project() {
   const projects = [
@@ -20,14 +20,14 @@ export default function Project() {
       content: 'My portfolio website, built with Remix, TypeScript, Tailwind, Chakra UI.',
       previewImg: PortfolioImage,
       githubUrl: 'https://github.com/lwshen/portfolio-remix',
-      demoUrl: 'https://portfolio.ryos.dev'
+      demoUrl: 'https://portfolio.ryos.dev',
     },
     {
       title: 'dotfiles',
       content: '💻 macOS / Ubuntu dotfiles',
       previewImg: DotfilesImage,
-      githubUrl: 'https://github.com/lwshen/dotfiles'
-    }
+      githubUrl: 'https://github.com/lwshen/dotfiles',
+    },
   ];
 
   return (

@@ -20,7 +20,7 @@ export default function Name({ className, values }: NameProps) {
 
   const variants = {
     show: { opacity: 1, transition: { duration: 1 } },
-    hidden: { opacity: 0, transition: { delay: durationTime / 2 - 1.2, duration: 1 } }
+    hidden: { opacity: 0, transition: { delay: durationTime / 2 - 1.2, duration: 1 } },
   };
 
   return (

@@ -10,8 +10,8 @@ export const links: LinksFunction = () => {
     ...avatarLinks(),
     {
       rel: 'stylesheet',
-      href: styles
-    }
+      href: styles,
+    },
   ];
 };
 
@@ -30,56 +30,56 @@ export default function Home() {
   const skills = [
     {
       label: 'java',
-      img: 'https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white'
+      img: 'https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white',
     },
     {
       label: 'spring',
-      img: 'https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white'
+      img: 'https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white',
     },
     {
       label: 'openapi',
-      img: 'https://img.shields.io/badge/openapi-%236BA539.svg?style=for-the-badge&logo=openapiinitiative&logoColor=white'
+      img: 'https://img.shields.io/badge/openapi-%236BA539.svg?style=for-the-badge&logo=openapiinitiative&logoColor=white',
     },
     {
       label: 'mysql',
-      img: 'https://img.shields.io/badge/mysql-%23507E9C.svg?style=for-the-badge&logo=mysql&logoColor=white'
+      img: 'https://img.shields.io/badge/mysql-%23507E9C.svg?style=for-the-badge&logo=mysql&logoColor=white',
     },
     {
       label: 'typescript',
-      img: 'https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white'
+      img: 'https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white',
     },
     {
       label: 'vue',
-      img: 'https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D'
+      img: 'https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D',
     },
     {
       label: 'tailwind-css',
-      img: 'https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white'
+      img: 'https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white',
     },
     {
       label: 'react',
-      img: 'https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB'
+      img: 'https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB',
     },
     {
       label: 'remix',
-      img: 'https://img.shields.io/badge/remix-%23000.svg?style=for-the-badge&logo=remix&logoColor=white'
+      img: 'https://img.shields.io/badge/remix-%23000.svg?style=for-the-badge&logo=remix&logoColor=white',
     },
     {
       label: 'git',
-      img: 'https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white'
+      img: 'https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white',
     },
     {
       label: 'docker',
-      img: 'https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white'
+      img: 'https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white',
     },
     {
       label: 'intellij-idea',
-      img: 'https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white'
+      img: 'https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white',
     },
     {
       label: 'webstorm',
-      img: 'https://img.shields.io/badge/webstorm-143?style=for-the-badge&logo=webstorm&logoColor=white&color=black'
-    }
+      img: 'https://img.shields.io/badge/webstorm-143?style=for-the-badge&logo=webstorm&logoColor=white&color=black',
+    },
   ];
 
   return (

@@ -10,12 +10,12 @@ export default function HomeHeader() {
   const navList = [
     {
       label: 'Home',
-      url: '/'
+      url: '/',
     },
     {
       label: 'Projects',
-      url: 'project'
-    }
+      url: 'project',
+    },
   ];
 
   const activeClassName = 'underline';

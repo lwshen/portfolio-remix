@@ -6,8 +6,8 @@ export const links: LinksFunction = () => {
   return [
     {
       rel: 'stylesheet',
-      href: styles
-    }
+      href: styles,
+    },
   ];
 };
 

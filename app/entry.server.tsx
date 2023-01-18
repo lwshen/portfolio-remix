@@ -60,7 +60,7 @@ function handleBotRequest(
           resolve(
             new Response(body, {
               headers: responseHeaders,
-              status: didError ? 500 : responseStatusCode
+              status: didError ? 500 : responseStatusCode,
             })
           );
 
@@ -73,7 +73,7 @@ function handleBotRequest(
           didError = true;
 
           console.error(error);
-        }
+        },
       }
     );
 
@@ -118,7 +118,7 @@ function handleBrowserRequest(
           resolve(
             new Response(body, {
               headers: responseHeaders,
-              status: didError ? 500 : responseStatusCode
+              status: didError ? 500 : responseStatusCode,
             })
           );
 
@@ -131,7 +131,7 @@ function handleBrowserRequest(
           didError = true;
 
           console.error(error);
-        }
+        },
       }
     );
 

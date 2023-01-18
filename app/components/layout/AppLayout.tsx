@@ -15,7 +15,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
           lineHeight: '1.4',
           margin: '0 auto',
           padding: '0 40px',
-          maxWidth: '820px'
+          maxWidth: '820px',
         }}
       >
         {children}
