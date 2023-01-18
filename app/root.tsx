@@ -1,6 +1,7 @@
-import React, { useContext, useEffect } from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
+import { withEmotionCache } from '@emotion/react';
 import { json } from '@remix-run/node';
-import type { MetaFunction, LinksFunction } from '@remix-run/node';
+import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -8,34 +9,34 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useLoaderData
+  useLoaderData,
 } from '@remix-run/react';
-import { withEmotionCache } from '@emotion/react';
-import { ChakraProvider } from '@chakra-ui/react';
 
-import { ServerStyleContext, ClientStyleContext } from '~/context';
-import { theme } from '~/theme';
-import { BLOG_URL, BEIAN } from '~/server/config.server';
+import React, { useContext, useEffect } from 'react';
+
+import AppLayout from '~/components/layout/AppLayout';
+import { ClientStyleContext, ServerStyleContext } from '~/context';
+import { BEIAN, BLOG_URL } from '~/server/config.server';
 import globalStylesUrl from '~/styles/global.css';
 import tailwindStylesUrl from '~/styles/tailwind.css';
+import { theme } from '~/theme';
 import type { Env } from '~/types/global';
-import AppLayout from '~/components/layout/AppLayout';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
-  viewport: 'width=device-width,initial-scale=1'
+  viewport: 'width=device-width,initial-scale=1',
 });
 
 export const links: LinksFunction = () => {
   return [
     {
       rel: 'stylesheet',
-      href: tailwindStylesUrl
+      href: tailwindStylesUrl,
     },
     {
       rel: 'stylesheet',
-      href: globalStylesUrl
-    }
+      href: globalStylesUrl,
+    },
   ];
 };
 
@@ -43,8 +44,8 @@ export async function loader() {
   return json({
     ENV: {
       BLOG_URL,
-      BEIAN
-    } as Env
+      BEIAN,
+    } as Env,
   });
 }
 
@@ -66,7 +67,7 @@ const Document = withEmotionCache(
       // re-inject tags
       const tags = emotionCache.sheet.tags;
       emotionCache.sheet.flush();
-      tags.forEach((tag) => {
+      tags.forEach(tag => {
         (emotionCache.sheet as any) // eslint-disable-line @typescript-eslint/no-explicit-any
           ._insertTag(tag);
       });
@@ -93,7 +94,7 @@ const Document = withEmotionCache(
           <ScrollRestoration />
           <script
             dangerouslySetInnerHTML={{
-              __html: `window.ENV = ${JSON.stringify(data.ENV)}`
+              __html: `window.ENV = ${JSON.stringify(data.ENV)}`,
             }}
           />
           <Scripts />

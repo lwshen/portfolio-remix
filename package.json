@@ -14,7 +14,8 @@
     "lint": "pnpm run lint:style && pnpm run lint:eslint && pnpm run typecheck",
     "lint:eslint": "eslint --max-warnings 0 --ext .js,.jsx,.ts,.tsx .",
     "lint:style": "prettier . --check",
-    "lint:fix": "npx prettier . --write && npm run lint:eslint --fix"
+    "lint:fix": "npx prettier . --write && npm run lint:eslint --fix",
+    "commit": "cz"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.16",
@@ -34,12 +35,15 @@
   "devDependencies": {
     "@remix-run/dev": "^1.8.2",
     "@remix-run/eslint-config": "^1.8.2",
+    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
     "@typescript-eslint/eslint-plugin": "^5.47.0",
     "@typescript-eslint/parser": "^5.47.0",
     "autoprefixer": "^10.4.13",
+    "commitizen": "^4.2.6",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -62,5 +66,10 @@
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": "eslint --cache --fix",
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }

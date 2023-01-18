@@ -5,22 +5,22 @@ export const theme = extendTheme({
     global: {
       // styles for the `body`
       body: {
-        bg: 'blackAlpha.50'
+        bg: 'blackAlpha.50',
       },
       // styles for the `a`
       a: {
         _hover: {
-          textDecoration: 'underline'
-        }
-      }
-    }
+          textDecoration: 'underline',
+        },
+      },
+    },
   },
   components: {
     Divider: {
       baseStyle: {
         borderColor: 'blackAlpha.400',
-        borderWidth: '1px'
-      }
-    }
-  }
+        borderWidth: '1px',
+      },
+    },
+  },
 });

@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
 import { NavLink } from '@remix-run/react';
+
+import { useEffect, useState } from 'react';
 
 export default function HomeHeader() {
   const [url, setUrl] = useState('#');
@@ -10,12 +11,12 @@ export default function HomeHeader() {
   const navList = [
     {
       label: 'Home',
-      url: '/'
+      url: '/',
     },
     {
       label: 'Projects',
-      url: 'project'
-    }
+      url: 'project',
+    },
   ];
 
   const activeClassName = 'underline';

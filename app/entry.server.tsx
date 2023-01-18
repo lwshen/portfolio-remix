@@ -1,11 +1,13 @@
-import { PassThrough } from 'stream';
+import { CacheProvider } from '@emotion/react';
+import createEmotionServer from '@emotion/server/create-instance';
 import type { EntryContext } from '@remix-run/node';
 import { Response } from '@remix-run/node';
 import { RemixServer } from '@remix-run/react';
-import isbot from 'isbot';
+
 import { renderToPipeableStream, renderToString } from 'react-dom/server';
-import { CacheProvider } from '@emotion/react';
-import createEmotionServer from '@emotion/server/create-instance';
+
+import isbot from 'isbot';
+import { PassThrough } from 'stream';
 
 import { ServerStyleContext } from '~/context';
 import createEmotionCache from '~/createEmotionCache';
@@ -60,7 +62,7 @@ function handleBotRequest(
           resolve(
             new Response(body, {
               headers: responseHeaders,
-              status: didError ? 500 : responseStatusCode
+              status: didError ? 500 : responseStatusCode,
             })
           );
 
@@ -73,7 +75,7 @@ function handleBotRequest(
           didError = true;
 
           console.error(error);
-        }
+        },
       }
     );
 
@@ -118,7 +120,7 @@ function handleBrowserRequest(
           resolve(
             new Response(body, {
               headers: responseHeaders,
-              status: didError ? 500 : responseStatusCode
+              status: didError ? 500 : responseStatusCode,
             })
           );
 
@@ -131,7 +133,7 @@ function handleBrowserRequest(
           didError = true;
 
           console.error(error);
-        }
+        },
       }
     );
 
