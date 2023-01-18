@@ -18,6 +18,7 @@
     "commit": "cz"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.16",
     "@chakra-ui/react": "^2.4.8",
     "@emotion/cache": "^11",
     "@emotion/react": "^11",
