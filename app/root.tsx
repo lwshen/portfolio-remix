@@ -1,4 +1,5 @@
-import React, { useContext, useEffect } from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
+import { withEmotionCache } from '@emotion/react';
 import { json } from '@remix-run/node';
 import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import {
@@ -10,16 +11,16 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from '@remix-run/react';
-import { withEmotionCache } from '@emotion/react';
-import { ChakraProvider } from '@chakra-ui/react';
 
+import React, { useContext, useEffect } from 'react';
+
+import AppLayout from '~/components/layout/AppLayout';
 import { ClientStyleContext, ServerStyleContext } from '~/context';
-import { theme } from '~/theme';
 import { BEIAN, BLOG_URL } from '~/server/config.server';
 import globalStylesUrl from '~/styles/global.css';
 import tailwindStylesUrl from '~/styles/tailwind.css';
+import { theme } from '~/theme';
 import type { Env } from '~/types/global';
-import AppLayout from '~/components/layout/AppLayout';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',

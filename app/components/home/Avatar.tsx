@@ -1,5 +1,6 @@
-import type { LinksFunction } from '@remix-run/node';
 import { Avatar as AvatarWrap } from '@chakra-ui/react';
+import type { LinksFunction } from '@remix-run/node';
+
 import styles from '~/styles/components/avatar.css';
 
 export const links: LinksFunction = () => {

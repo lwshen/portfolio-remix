@@ -1,7 +1,8 @@
-import type { LinksFunction } from '@remix-run/node';
 import { Center, Divider } from '@chakra-ui/react';
-import Avatar, { links as avatarLinks } from '~/components/home/Avatar';
+import type { LinksFunction } from '@remix-run/node';
+
 import AvatarImage from '~/assets/image/avatar.jpeg';
+import Avatar, { links as avatarLinks } from '~/components/home/Avatar';
 import Name from '~/components/home/Name';
 import styles from '~/styles/components/home.css';
 

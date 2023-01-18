@@ -1,3 +1,4 @@
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 import {
   AspectRatio,
   Card,
@@ -9,7 +10,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import { ExternalLinkIcon } from '@chakra-ui/icons';
+
 import DotfilesImage from '~/assets/image/project/dotfiles.png';
 import PortfolioImage from '~/assets/image/project/portfolio.png';
 
