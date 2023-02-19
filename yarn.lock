@@ -2413,17 +2413,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/styled-system@npm:2.5.2":
-  version: 2.5.2
-  resolution: "@chakra-ui/styled-system@npm:2.5.2"
-  dependencies:
-    "@chakra-ui/shared-utils": 2.0.5
-    csstype: ^3.0.11
-    lodash.mergewith: 4.6.2
-  checksum: 4036fa8b44e7d69deca2fe025d5ecdeac1fb2384c248a4ed42a6343cd5c71378da99c258d9288550d8f6459659470d75791a27632d271a4994ba36f59100f6c8
-  languageName: node
-  linkType: hard
-
 "@chakra-ui/styled-system@npm:2.6.0":
   version: 2.6.0
   resolution: "@chakra-ui/styled-system@npm:2.6.0"
@@ -2432,6 +2421,17 @@ __metadata:
     csstype: ^3.0.11
     lodash.mergewith: 4.6.2
   checksum: 5bf2ff2bf14277b09b58b345eed016b9bb20bbf1c9cb4ef5507764d57f72b0a1e3f4f8a200e03f080b15bbccff10bb929e83a3de4855908a6e13ed5712342de0
+  languageName: node
+  linkType: hard
+
+"@chakra-ui/styled-system@npm:2.6.1":
+  version: 2.6.1
+  resolution: "@chakra-ui/styled-system@npm:2.6.1"
+  dependencies:
+    "@chakra-ui/shared-utils": 2.0.5
+    csstype: ^3.0.11
+    lodash.mergewith: 4.6.2
+  checksum: 33feff1a291b8c90debeca154b66cd331ab512cadf978ee1709f971030234e7bb2e05ae2361c7dd09fe6aee0853eb204005a580d6fa1f2b399cef56501fbaaa5
   languageName: node
   linkType: hard
 
@@ -2468,22 +2468,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/system@npm:^2.3.8":
-  version: 2.4.0
-  resolution: "@chakra-ui/system@npm:2.4.0"
+"@chakra-ui/system@npm:^2.5.1":
+  version: 2.5.1
+  resolution: "@chakra-ui/system@npm:2.5.1"
   dependencies:
     "@chakra-ui/color-mode": 2.1.12
     "@chakra-ui/object-utils": 2.0.8
     "@chakra-ui/react-utils": 2.0.12
-    "@chakra-ui/styled-system": 2.5.2
-    "@chakra-ui/theme-utils": 2.0.9
+    "@chakra-ui/styled-system": 2.6.1
+    "@chakra-ui/theme-utils": 2.0.11
     "@chakra-ui/utils": 2.0.15
     react-fast-compare: 3.2.0
   peerDependencies:
     "@emotion/react": ^11.0.0
     "@emotion/styled": ^11.0.0
     react: ">=18"
-  checksum: f1133063541b0368ebae4a0ffbf87886ea01c8571150df3f487d65035e3bf189769740123e0d41c9f2a030187010566399555d8f3bbcee6dcb6cb9a041b6c63c
+  checksum: 01ba6bd6fbd5c18538714661b852c19c0f811bfc64a05b7146d12c9f74fe22533d1bd6dcf7a35c6958c342d1dec436e668a5cda47c5971cd9a5e6034645687c0
   languageName: node
   linkType: hard
 
@@ -2571,15 +2571,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/theme-utils@npm:2.0.9":
-  version: 2.0.9
-  resolution: "@chakra-ui/theme-utils@npm:2.0.9"
+"@chakra-ui/theme-utils@npm:2.0.11":
+  version: 2.0.11
+  resolution: "@chakra-ui/theme-utils@npm:2.0.11"
   dependencies:
     "@chakra-ui/shared-utils": 2.0.5
-    "@chakra-ui/styled-system": 2.5.2
+    "@chakra-ui/styled-system": 2.6.1
     "@chakra-ui/theme": 2.2.5
     lodash.mergewith: 4.6.2
-  checksum: 04ec282438a585e3f1c6c40195de28a80a2b4694ffb98efe873b3f3bdeea10f19b3a3089be26550129ad9f043844a8c118d3ca16f4e1761e66932144537145ce
+  checksum: 16ecf0eb187a69b9522c633726f9ec9b8c00574161664ee38bf632da05043c8d903e2f0af2ce544dfc0a44af7b6d4d257fd1e9b45e16986028d331ade0d51280
   languageName: node
   linkType: hard
 
@@ -11522,7 +11522,7 @@ __metadata:
   dependencies:
     "@chakra-ui/icons": ^2.0.16
     "@chakra-ui/react": ^2.5.0
-    "@chakra-ui/system": ^2.3.8
+    "@chakra-ui/system": ^2.5.1
     "@emotion/cache": ^11
     "@emotion/react": ^11
     "@emotion/server": ^11

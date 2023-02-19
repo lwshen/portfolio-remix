@@ -20,7 +20,7 @@
   "dependencies": {
     "@chakra-ui/icons": "^2.0.16",
     "@chakra-ui/react": "^2.5.0",
-    "@chakra-ui/system": "^2.3.8",
+    "@chakra-ui/system": "^2.5.1",
     "@emotion/cache": "^11",
     "@emotion/react": "^11",
     "@emotion/server": "^11",
