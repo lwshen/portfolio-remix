@@ -1,33 +1,36 @@
-import parseFrontMatter from 'front-matter';
 import fs from 'fs/promises';
+import matter from 'gray-matter';
 import { marked } from 'marked';
 import path from 'path';
-import invariant from 'tiny-invariant';
-
-import type { PostMarkdownAttributes } from '~/types/post';
 
 // relative to the server output not the source!
 export const postsPath = path.join(__dirname, '..', 'posts');
 
-export function isValidPostAttributes(attributes: any): attributes is PostMarkdownAttributes {
-  return attributes?.title;
-}
+const parseFrontMatter = (
+  filePath: string
+): {
+  attributes: Record<string, unknown>;
+  content: string;
+} => {
+  const { data, content } = matter.read(filePath);
+  return {
+    attributes: data,
+    content: content.trim(),
+  };
+};
 
 export async function getPost(slug: string) {
   const filepath = path.join(postsPath, slug + '.md');
-  const file = await fs.readFile(filepath);
-  const { attributes, body } = parseFrontMatter(file.toString());
-  invariant(isValidPostAttributes(attributes), `Post ${filepath} is missing attributes`);
-  return { slug, title: attributes.title, html: marked(body) };
+  const { attributes, content } = parseFrontMatter(filepath);
+  return { slug, title: attributes.title, html: marked(content) };
 }
 
 export async function getPosts() {
   const dir = await fs.readdir(postsPath);
   return Promise.all(
     dir.map(async filename => {
-      const file = await fs.readFile(path.join(postsPath, filename));
-      const { attributes } = parseFrontMatter(file.toString());
-      invariant(isValidPostAttributes(attributes), `${filename} has bad meta data!`);
+      const filePath = path.join(postsPath, filename);
+      const { attributes } = parseFrontMatter(filePath);
       return {
         slug: filename.replace(/\.md$/, ''),
         title: attributes.title,
