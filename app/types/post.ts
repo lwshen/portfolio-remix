@@ -4,6 +4,7 @@ export type DocAttribute = z.infer<typeof DocAttributeSchema>;
 
 export const DocAttributeSchema = z.object({
   title: z.string(),
+  date: z.date(),
   published_at: z.date().optional(),
   description: z.string().optional(),
 });

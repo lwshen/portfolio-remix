@@ -6,8 +6,8 @@ import path from 'path';
 import type { DocAttribute, Post } from '~/types/post';
 import { DocAttributeSchema } from '~/types/post';
 
-export const validateAttribute = (frontmatter: Record<string, unknown>): DocAttribute =>
-  DocAttributeSchema.parse(frontmatter);
+export const validateAttribute = (fontMatter: Record<string, unknown>): DocAttribute =>
+  DocAttributeSchema.parse(fontMatter);
 
 // relative to the server output not the source!
 export const postsPath = path.join(__dirname, '..', 'posts');
@@ -34,7 +34,7 @@ export async function getPost(slug: string): Promise<Post> {
 
 export async function getPosts(): Promise<Post[]> {
   const dir = await fs.readdir(postsPath);
-  return Promise.all(
+  const posts = await Promise.all(
     dir.map(async filename => {
       const filePath = path.join(postsPath, filename);
       const { attribute: unsafeAttribute, content } = parseFrontMatter(filePath);
@@ -47,4 +47,5 @@ export async function getPosts(): Promise<Post[]> {
       };
     })
   );
+  return posts.sort((a, b) => b.attribute.date.getTime() - a.attribute.date.getTime());
 }

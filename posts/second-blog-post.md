@@ -1,5 +1,6 @@
 ---
 title: This is my second blog post!
+date: 2022-11-05 15:00:00
 published_at: 2022-11-05T15:00:00.000Z
 description: This is an excerpt of my second blog post.
 ---
