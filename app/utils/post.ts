@@ -3,7 +3,7 @@ import matter from 'gray-matter';
 import { marked } from 'marked';
 import path from 'path';
 
-import type { DocAttribute } from '~/types/post';
+import type { DocAttribute, Post } from '~/types/post';
 import { DocAttributeSchema } from '~/types/post';
 
 export const validateAttribute = (frontmatter: Record<string, unknown>): DocAttribute =>
@@ -15,33 +15,35 @@ export const postsPath = path.join(__dirname, '..', 'posts');
 const parseFrontMatter = (
   filePath: string
 ): {
-  attributes: Record<string, unknown>;
+  attribute: Record<string, unknown>;
   content: string;
 } => {
   const { data, content } = matter.read(filePath);
   return {
-    attributes: data,
+    attribute: data,
     content: content.trim(),
   };
 };
 
-export async function getPost(slug: string) {
+export async function getPost(slug: string): Promise<Post> {
   const filepath = path.join(postsPath, slug + '.md');
-  const { attributes: unsafeAttributes, content } = parseFrontMatter(filepath);
-  const attributes = validateAttribute(unsafeAttributes);
-  return { slug, title: attributes.title, html: marked(content) };
+  const { attribute: unsafeAttribute, content } = parseFrontMatter(filepath);
+  const attribute = validateAttribute(unsafeAttribute);
+  return { slug, attribute, markdown: content, html: marked(content) };
 }
 
-export async function getPosts() {
+export async function getPosts(): Promise<Post[]> {
   const dir = await fs.readdir(postsPath);
   return Promise.all(
     dir.map(async filename => {
       const filePath = path.join(postsPath, filename);
-      const { attributes: unsafeAttributes } = parseFrontMatter(filePath);
-      const attributes = validateAttribute(unsafeAttributes);
+      const { attribute: unsafeAttribute, content } = parseFrontMatter(filePath);
+      const attribute = validateAttribute(unsafeAttribute);
       return {
         slug: filename.replace(/\.md$/, ''),
-        title: attributes.title,
+        attribute,
+        markdown: content,
+        html: marked(content),
       };
     })
   );

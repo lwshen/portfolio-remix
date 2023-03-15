@@ -10,6 +10,7 @@ export const DocAttributeSchema = z.object({
 
 export type Post = {
   slug: string;
-  title: string;
+  attribute: DocAttribute;
   markdown: string;
+  html: string;
 };
