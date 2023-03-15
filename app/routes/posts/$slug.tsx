@@ -1,0 +1,23 @@
+import type { LoaderFunction } from '@remix-run/node';
+import { useLoaderData } from '@remix-run/react';
+
+import invariant from 'tiny-invariant';
+
+import type { Post } from '~/types/post';
+import { getPost } from '~/utils/post';
+
+export const loader: LoaderFunction = async ({ params }) => {
+  invariant(params.slug, 'expected params.slug');
+  return getPost(params.slug);
+};
+
+export default function PostSlug() {
+  const post: Post = useLoaderData();
+
+  return (
+    <div>
+      <p className="text-3xl font-bold pb-8 jin-bu-ti">{post.attribute.title}</p>
+      <div className="prose prose-p:my-2" dangerouslySetInnerHTML={{ __html: post.html }} />
+    </div>
+  );
+}
