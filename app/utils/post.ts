@@ -25,6 +25,12 @@ const parseFrontMatter = (
   };
 };
 
+export async function createPost(post: Post) {
+  const md = matter.stringify(post.markdown, post.attribute);
+  await fs.writeFile(path.join(postsPath, post.slug + '.md'), md);
+  return getPost(post.slug);
+}
+
 export async function getPost(slug: string): Promise<Post> {
   const filepath = path.join(postsPath, slug + '.md');
   const { attribute: unsafeAttribute, content } = parseFrontMatter(filepath);
