@@ -27,7 +27,7 @@
     "@emotion/styled": "^11",
     "@remix-run/node": "^1.8.2",
     "@remix-run/react": "^1.8.2",
-    "@remix-run/serve": "^1.8.2",
+    "@remix-run/serve": "^1.14.3",
     "framer-motion": "^10",
     "gray-matter": "^4.0.3",
     "isbot": "^3.6.6",
