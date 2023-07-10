@@ -4,6 +4,8 @@ import { RemixBrowser } from '@remix-run/react';
 import React, { StrictMode, startTransition, useState } from 'react';
 import { hydrateRoot } from 'react-dom/client';
 
+import LogRocket from 'logrocket';
+
 import { ClientStyleContext } from '~/context';
 import createEmotionCache, { defaultCache } from '~/createEmotionCache';
 
@@ -45,3 +47,5 @@ if (window.requestIdleCallback) {
   // https://caniuse.com/requestidlecallback
   window.setTimeout(hydrate, 1);
 }
+
+LogRocket.init('sfcmdn/portfolio-remix');
