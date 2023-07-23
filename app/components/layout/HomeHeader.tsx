@@ -3,7 +3,7 @@ import { NavLink } from '@remix-run/react';
 import { useEffect, useState } from 'react';
 
 export default function HomeHeader() {
-  const [url, setUrl] = useState('#');
+  const [url, setUrl] = useState('/posts');
   useEffect(() => {
     setUrl(window.ENV.BLOG_URL);
   }, []);
