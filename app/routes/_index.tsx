@@ -4,6 +4,6 @@ export function links() {
   return [...homeLinks()];
 }
 
-export default function Index() {
+export default function index() {
   return <Home />;
 }

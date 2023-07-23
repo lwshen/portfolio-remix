@@ -1,7 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { withEmotionCache } from '@emotion/react';
 import { json } from '@remix-run/node';
-import type { LinksFunction, MetaFunction } from '@remix-run/node';
+import type { LinksFunction, V2_MetaFunction } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -22,10 +22,14 @@ import tailwindStylesUrl from '~/styles/tailwind.css';
 import { theme } from '~/theme';
 import type { Env } from '~/types/global';
 
-export const meta: MetaFunction = () => ({
-  charset: 'utf-8',
-  viewport: 'width=device-width,initial-scale=1',
-});
+export const meta: V2_MetaFunction = () => [
+  {
+    charset: 'utf-8',
+  },
+  {
+    viewport: 'width=device-width,initial-scale=1',
+  },
+];
 
 export const links: LinksFunction = () => {
   return [

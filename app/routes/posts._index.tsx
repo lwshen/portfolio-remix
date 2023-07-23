@@ -5,7 +5,7 @@ import { getPosts } from '~/utils/post';
 
 export const loader = getPosts;
 
-export default function Posts() {
+export default function Posts_index() {
   const posts: Post[] = useLoaderData();
   return (
     <div>
