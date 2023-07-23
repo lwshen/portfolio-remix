@@ -1,16 +1,30 @@
-import { Fragment } from 'react';
+import type { LinksFunction } from '@remix-run/node';
+
+import React from 'react';
 
 import HomeFooter from '~/components/layout/HomeFooter';
-import HomeHeader from '~/components/layout/HomeHeader';
+import HomeHeader, { links as headerLinks } from '~/components/layout/HomeHeader';
+
+export const links: LinksFunction = () => {
+  return [...headerLinks()];
+};
 
 export interface AppLayoutProps {
   children: React.ReactNode;
 }
 
 export default function AppLayout({ children }: AppLayoutProps) {
+  const [mode, setMode] = React.useState('light');
+
+  React.useEffect(() => {
+    if (localStorage.getItem('mode')) {
+      setMode(localStorage.getItem('mode') ?? 'light');
+    }
+  }, []);
+
   return (
-    <Fragment>
-      <HomeHeader />
+    <div className="layout" color-mode={mode}>
+      <HomeHeader setMode={setMode} mode={mode} />
       <div
         style={{
           lineHeight: '1.4',
@@ -22,6 +36,6 @@ export default function AppLayout({ children }: AppLayoutProps) {
         {children}
       </div>
       <HomeFooter />
-    </Fragment>
+    </div>
   );
 }
