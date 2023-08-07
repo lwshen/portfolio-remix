@@ -4600,10 +4600,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^18.11.18":
+"@types/node@npm:*":
   version: 18.13.0
   resolution: "@types/node@npm:18.13.0"
   checksum: 4ea10f8802848b01672bce938f678b6774ca2cee0c9774f12275ab064ae07818419c3e2e41d6257ce7ba846d1ea26c63214aa1dfa4166fa3746291752b8c6416
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.4.8":
+  version: 20.4.8
+  resolution: "@types/node@npm:20.4.8"
+  checksum: 86a3963c0c7af3410553d1dfa4b018a20b3cb3ab4d8e8ffe27408b6338c5de0374b0bf379bc705da2205b466daa751ccfe062f453ba9bde34fdb0e5163ca6a68
   languageName: node
   linkType: hard
 
@@ -12418,7 +12425,7 @@ __metadata:
     "@tailwindcss/typography": ^0.5.9
     "@trivago/prettier-plugin-sort-imports": ^4.2.0
     "@types/marked": ^5.0.1
-    "@types/node": ^18.11.18
+    "@types/node": ^20.4.8
     "@types/react": ^18.0.33
     "@types/react-dom": ^18.0.11
     "@typescript-eslint/eslint-plugin": ^5.59.8
