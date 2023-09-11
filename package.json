@@ -14,7 +14,7 @@
     "lint": "pnpm run lint:style && pnpm run lint:eslint && pnpm run typecheck",
     "lint:eslint": "eslint --max-warnings 0 --ext .js,.jsx,.ts,.tsx .",
     "lint:style": "prettier . --check",
-    "lint:fix": "npx prettier . --write && npm run lint:eslint --fix",
+    "lint:fix": "prettier . --write && npm run lint:eslint --fix",
     "commit": "cz"
   },
   "dependencies": {
