@@ -2,7 +2,7 @@ image: node:16.17.0
 
 before_script:
   - npm config set registry https://registry.npmmirror.com
-  - yarn install --frozen-lockfile
+  - yarn install --immutable
 
 cache:
   paths:

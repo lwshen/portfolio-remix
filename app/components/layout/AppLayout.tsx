@@ -1,10 +1,11 @@
+import type { ReactNode } from 'react';
 import { Fragment } from 'react';
 
 import HomeFooter from '~/components/layout/HomeFooter';
 import HomeHeader from '~/components/layout/HomeHeader';
 
 export interface AppLayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function AppLayout({ children }: AppLayoutProps) {
