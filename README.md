@@ -9,7 +9,7 @@ Give a ⭐ if you like this website!
 From your terminal:
 
 ```sh
-yarn run dev
+pnpm run dev
 ```
 
 This starts your app in development mode at `http://localhost:3000`, rebuilding assets on file changes.
@@ -19,13 +19,13 @@ This starts your app in development mode at `http://localhost:3000`, rebuilding 
 First, build your app for production:
 
 ```sh
-yarn run build
+pnpm run build
 ```
 
 Then run the app in production mode:
 
 ```sh
-yarn start
+pnpm start
 ```
 
 Now you'll need to pick a host to deploy it to.

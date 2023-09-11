@@ -1,8 +1,9 @@
-image: node:16.17.0
+image: node:16.20.0
 
 before_script:
   - npm config set registry https://registry.npmmirror.com
-  - yarn install --immutable
+  - npm install -g pnpm
+  - pnpm install --frozen-lockfile
 
 cache:
   paths:
@@ -14,4 +15,4 @@ stages:
 build_job:
   stage: build
   script:
-    - yarn run build
+    - pnpm run build

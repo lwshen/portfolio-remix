@@ -12,7 +12,7 @@ export const loader: LoaderFunction = async ({ params }: LoaderArgs) => {
 };
 
 export default function PostSlug() {
-  const post: Post = useLoaderData();
+  const post = useLoaderData<typeof loader>();
 
   return (
     <div>

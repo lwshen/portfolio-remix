@@ -21,8 +21,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn install --immutable
-      - run: yarn run lint:style
-      - run: yarn run lint:eslint
-      - run: yarn run typecheck
-      - run: yarn run build
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run lint:style
+      - run: pnpm run lint:eslint
+      - run: pnpm run typecheck
+      - run: pnpm run build

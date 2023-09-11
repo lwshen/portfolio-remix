@@ -4,8 +4,8 @@ WORKDIR /app
 
 COPY ./ .
 
-RUN yarn install --immutable
-RUN yarn run build
+RUN pnpm install --frozen-lockfile
+RUN pnpm run build
 ENV NODE_ENV=production
 
 CMD ["yarn", "run" ,"start"]

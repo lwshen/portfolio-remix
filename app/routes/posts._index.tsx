@@ -1,12 +1,11 @@
 import { Link, useLoaderData } from '@remix-run/react';
 
-import type { Post } from '~/types/post';
 import { getPosts } from '~/utils/post';
 
 export const loader = getPosts;
 
 export default function Posts_index() {
-  const posts: Post[] = useLoaderData();
+  const posts = useLoaderData<typeof loader>();
   return (
     <div>
       <p className="text-3xl font-bold pb-8 jin-bu-ti">Posts</p>
