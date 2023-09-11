@@ -3,7 +3,6 @@ import { useLoaderData } from '@remix-run/react';
 
 import invariant from 'tiny-invariant';
 
-import type { Post } from '~/types/post';
 import { getPost } from '~/utils/post';
 
 export const loader: LoaderFunction = async ({ params }: LoaderArgs) => {
@@ -12,7 +11,7 @@ export const loader: LoaderFunction = async ({ params }: LoaderArgs) => {
 };
 
 export default function PostSlug() {
-  const post: Post = useLoaderData();
+  const post = useLoaderData<typeof loader>();
 
   return (
     <div>

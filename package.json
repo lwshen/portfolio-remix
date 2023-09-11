@@ -11,10 +11,10 @@
     "dev:remix": "remix dev",
     "start": "remix-serve build",
     "typecheck": "tsc -b",
-    "lint": "yarn run lint:style && yarn run lint:eslint && yarn run typecheck",
+    "lint": "run-s lint:style lint:eslint typecheck",
     "lint:eslint": "eslint --max-warnings 0 --ext .js,.jsx,.ts,.tsx .",
     "lint:style": "prettier . --check",
-    "lint:fix": "prettier . --write && yarn run lint:eslint --fix",
+    "lint:fix": "prettier . --write && pnpm run lint:eslint --fix",
     "commit": "cz"
   },
   "dependencies": {
@@ -87,5 +87,5 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "packageManager": "yarn@3.4.1"
+  "packageManager": "pnpm@8.7.5"
 }

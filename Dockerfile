@@ -4,9 +4,10 @@ WORKDIR /app
 
 COPY ./ .
 
-RUN yarn install --immutable
-RUN yarn run build
+RUN npm install -g pnpm
+RUN pnpm install --frozen-lockfile
+RUN pnpm run build
 ENV NODE_ENV=production
 
-CMD ["yarn", "run" ,"start"]
+CMD ["pnpm", "run" ,"start"]
 EXPOSE 3000
