@@ -17,5 +17,5 @@ export type Post = {
   slug: string;
   attribute: DocAttribute;
   markdown: string;
-  html: string;
+  html: string | Promise<string>;
 };

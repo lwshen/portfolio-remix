@@ -1,6 +1,7 @@
 import type { LinksFunction } from '@remix-run/node';
 
 import React from 'react';
+import type { ReactNode } from 'react';
 
 import HomeFooter from '~/components/layout/HomeFooter';
 import HomeHeader, { links as headerLinks } from '~/components/layout/HomeHeader';
@@ -10,7 +11,7 @@ export const links: LinksFunction = () => {
 };
 
 export interface AppLayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function AppLayout({ children }: AppLayoutProps) {

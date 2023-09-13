@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'smiley-sans';
-  src: url('/fonts/SmileySans-Oblique.otf.woff2') format('woff2'),
+  src:
+    url('/fonts/SmileySans-Oblique.otf.woff2') format('woff2'),
     url('/fonts/SmileySans-Oblique.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
@@ -28,7 +29,9 @@ body {
 }
 
 html {
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
 
 html.dark {

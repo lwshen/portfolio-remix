@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['@trivago/prettier-plugin-sort-imports'],
+  plugins: [require.resolve('@trivago/prettier-plugin-sort-imports')],
   semi: true,
   tabWidth: 2,
   useTabs: false,
