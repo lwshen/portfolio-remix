@@ -53,9 +53,6 @@ dependencies:
   marked:
     specifier: ^9.0.0
     version: 9.0.0
-  marked-highlight:
-    specifier: ^2.0.6
-    version: 2.0.6(marked@9.0.0)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -7591,14 +7588,6 @@ packages:
     resolution: {integrity: sha512-WWC0ZuMzCyDHYCasEGs4IPvLyTGftYwh6wIEOULOF0HXcqZlhwRzrK0w2VUlxWA98xnvb/jszw4ZSkJ6ADpM6Q==}
     engines: {node: '>=0.10.0'}
     dev: true
-
-  /marked-highlight@2.0.6(marked@9.0.0):
-    resolution: {integrity: sha512-xjA/C6xgXAfkkYg+YHnxdjmgFyTDtqqu8KbZiqh+COJ7PuzR15kqa+rPrs6pf/2jExXtG1jyCFUHmv9s0Bi/dQ==}
-    peerDependencies:
-      marked: '>=4 <10'
-    dependencies:
-      marked: 9.0.0
-    dev: false
 
   /marked@9.0.0:
     resolution: {integrity: sha512-37yoTpjU+TSXb9OBYY5n78z/CqXh76KiQj9xsKxEdztzU9fRLmbWO5YqKxgCVGKlNdexppnbKTkwB3RipVri8w==}
