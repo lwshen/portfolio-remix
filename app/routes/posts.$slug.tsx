@@ -1,11 +1,21 @@
-import type { LoaderArgs, LoaderFunction } from '@remix-run/node';
+import type { LinksFunction, LoaderArgs } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 
 import invariant from 'tiny-invariant';
 
+import highlightStylesUrl from '~/styles/atom-one-dark.css';
 import { getPost } from '~/utils/post';
 
-export const loader: LoaderFunction = async ({ params }: LoaderArgs) => {
+export const links: LinksFunction = () => {
+  return [
+    {
+      rel: 'stylesheet',
+      href: highlightStylesUrl,
+    },
+  ];
+};
+
+export const loader = async ({ params }: LoaderArgs) => {
   invariant(params.slug, 'expected params.slug');
   return getPost(params.slug);
 };
