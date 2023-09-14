@@ -2,7 +2,6 @@ import hljs from 'highlight.js';
 import katex from 'katex';
 import { Marked } from 'marked';
 import markedKatex from 'marked-katex-extension';
-import markedMermaid from 'marked-mermaid';
 
 function highlight(code: string, lang: string) {
   const language = hljs.getLanguage(lang) ? lang : 'plaintext';
@@ -48,8 +47,7 @@ export function renderMarkdown(content: string) {
     markedKatex({
       output: 'html',
       throwOnError: false,
-    }),
-    markedMermaid({})
+    })
   );
 
   return marked.parse(content);

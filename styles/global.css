@@ -34,10 +34,6 @@ html {
     color 0.2s;
 }
 
-pre.mermaid {
-  background-color: transparent;
-}
-
 .smiley-sans {
   font-family: 'smiley-sans';
   -webkit-font-smoothing: antialiased;
