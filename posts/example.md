@@ -319,11 +319,11 @@ X&sup2; Y&sup3; &frac34; &frac14; &times; &divide; &raquo;
 
 $$E=mc^2$$
 
-行内的公式$$E=mc^2$$行内的公式，行内的$$E=mc^2$$公式。
+行内的公式 $E=mc^2$ 行内的公式，行内的 $E=mc^2$ 公式。
 
 $$x > y$$
 
-$$\(\sqrt{3x-1}+(1+x)^2\)$$
+$$\pm(\sqrt{3x-1}+(1+x)^2)$$
 
 $$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$
 
@@ -355,26 +355,29 @@ f(x) = \int_{-\infty}^\infty
     \,d\xi
 ```
 
-### 绘制流程图 Flowchart
+### mermaid
 
-```flow
-st=>start: 用户登陆
-op=>operation: 登陆操作
-cond=>condition: 登陆成功 Yes or No?
-e=>end: 进入后台
-
-st->op->cond
-cond(yes)->e
-cond(no)->op
+```mermaid
+graph TD
+    A[Enter Chart Definition] --> B(Preview)
+    B --> C{decide}
+    C --> D[Keep]
+    C --> E[Edit Definition]
+    E --> B
+    D --> F[Save Image and Code]
+    F --> B
 ```
 
-### 绘制序列图 Sequence Diagram
-
-```seq
-Andrew->China: Says Hello
-Note right of China: China thinks\nabout it
-China-->Andrew: How are you?
-Andrew->>China: I am good thanks!
+```mermaid
+gantt
+    title A Gantt Diagram
+    dateFormat  YYYY-MM-DD
+    section Section
+    A task           :a1, 2014-01-01, 30d
+    Another task     :after a1  , 20d
+    section Another
+    Task in sec      :2014-01-12  , 12d
+    another task      : 24d
 ```
 
 ### End

@@ -48,4 +48,6 @@ if (window.requestIdleCallback) {
   window.setTimeout(hydrate, 1);
 }
 
-LogRocket.init('sfcmdn/portfolio-remix');
+if (process.env.NODE_ENV !== 'development') {
+  LogRocket.init('sfcmdn/portfolio-remix');
+}
