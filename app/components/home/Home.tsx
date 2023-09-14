@@ -1,4 +1,5 @@
-import { Center, Divider } from '@chakra-ui/react';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { Center, Divider, Link } from '@chakra-ui/react';
 import type { LinksFunction } from '@remix-run/node';
 
 import AvatarImage from '~/assets/image/avatar.jpeg';
@@ -84,7 +85,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="space-y-4 text-gray-700">
+    <div className="space-y-4">
       <div className="flex flex-row items-center space-x-8">
         <Avatar imgUrl={AvatarImage} fallback="Ryo" size="lg" />
         <div className="smiley-sans">
@@ -109,9 +110,9 @@ export default function Home() {
       <Separator />
       <p>
         Find me on{' '}
-        <a className="text-black underline" href="https://github.com/lwshen">
-          Github
-        </a>
+        <Link textDecoration="underline" href="https://github.com/lwshen" isExternal>
+          Github <ExternalLinkIcon mx="2px" />
+        </Link>
       </p>
     </div>
   );
