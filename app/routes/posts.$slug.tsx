@@ -4,6 +4,7 @@ import { useLoaderData } from '@remix-run/react';
 import invariant from 'tiny-invariant';
 
 import highlightStylesUrl from '~/styles/atom-one-dark.css';
+import katexStylesUrl from '~/styles/katex.css';
 import { getPost } from '~/utils/post';
 
 export const links: LinksFunction = () => {
@@ -11,6 +12,10 @@ export const links: LinksFunction = () => {
     {
       rel: 'stylesheet',
       href: highlightStylesUrl,
+    },
+    {
+      rel: 'stylesheet',
+      href: katexStylesUrl,
     },
   ];
 };
