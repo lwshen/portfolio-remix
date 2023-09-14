@@ -319,7 +319,7 @@ X&sup2; Y&sup3; &frac34; &frac14; &times; &divide; &raquo;
 
 $$E=mc^2$$
 
-行内的公式$$E=mc^2$$行内的公式，行内的$$E=mc^2$$公式。
+行内的公式 $E=mc^2$ 行内的公式，行内的 $E=mc^2$ 公式。
 
 $$x > y$$
 

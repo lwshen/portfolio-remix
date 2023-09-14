@@ -1,5 +1,7 @@
 import hljs from 'highlight.js';
+import katex from 'katex';
 import { Marked } from 'marked';
+import markedKatex from 'marked-katex-extension';
 
 function highlight(code: string, lang: string) {
   const language = hljs.getLanguage(lang) ? lang : 'plaintext';
@@ -17,24 +19,38 @@ export function renderMarkdown(content: string) {
   renderer.code = function (code, language) {
     const lang = getLang(language);
     if (lang === 'math' || lang === 'latex' || lang === 'katex') {
-      return '<p class="katex">' + code + '</p>';
+      return (
+        '<p class="katex">' +
+        katex.renderToString(code, {
+          output: 'html',
+          throwOnError: false,
+          displayMode: true,
+        }) +
+        '</p>'
+      );
     } else if (lang === 'mermaid') {
       return '<pre class="mermaid">' + code + '</pre>';
     } else if (lang === 'seq' || lang === 'sequence') {
-      return '<div class="sequence-diagram">' + code + '</div>';
+      return '<pre class="sequence-diagram">' + code + '</pre>';
     } else if (lang === 'flow') {
-      return '<div class="flowchart">' + code + '</div>';
+      return '<pre class="flowchart">' + code + '</pre>';
     } else {
       const hlCode = highlight(code, lang);
       return `<pre><code class="hljs language-${escape(lang, false)}">${hlCode}</code></pre>`;
     }
   };
 
-  marked.use({
-    pedantic: false,
-    gfm: true,
-    renderer: renderer,
-  });
+  marked.use(
+    {
+      pedantic: false,
+      gfm: true,
+      renderer: renderer,
+    },
+    markedKatex({
+      output: 'html',
+      throwOnError: false,
+    })
+  );
 
   return marked.parse(content);
 }
