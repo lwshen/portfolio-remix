@@ -2,6 +2,7 @@ import hljs from 'highlight.js';
 import katex from 'katex';
 import { Marked } from 'marked';
 import markedKatex from 'marked-katex-extension';
+import markedMermaid from 'marked-mermaid';
 
 function highlight(code: string, lang: string) {
   const language = hljs.getLanguage(lang) ? lang : 'plaintext';
@@ -28,8 +29,6 @@ export function renderMarkdown(content: string) {
         }) +
         '</p>'
       );
-    } else if (lang === 'mermaid') {
-      return '<pre class="mermaid">' + code + '</pre>';
     } else if (lang === 'seq' || lang === 'sequence') {
       return '<pre class="sequence-diagram">' + code + '</pre>';
     } else if (lang === 'flow') {
@@ -49,7 +48,8 @@ export function renderMarkdown(content: string) {
     markedKatex({
       output: 'html',
       throwOnError: false,
-    })
+    }),
+    markedMermaid({})
   );
 
   return marked.parse(content);

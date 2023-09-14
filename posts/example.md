@@ -355,29 +355,9 @@ f(x) = \int_{-\infty}^\infty
     \,d\xi
 ```
 
-### 绘制流程图 Flowchart
+### mermaid
 
-```flow
-st=>start: 用户登陆
-op=>operation: 登陆操作
-cond=>condition: 登陆成功 Yes or No?
-e=>end: 进入后台
-
-st->op->cond
-cond(yes)->e
-cond(no)->op
-```
-
-### 绘制序列图 Sequence Diagram
-
-```seq
-Andrew->China: Says Hello
-Note right of China: China thinks\nabout it
-China-->Andrew: How are you?
-Andrew->>China: I am good thanks!
-```
-
-```graph
+```mermaid
 graph TD
     A[Enter Chart Definition] --> B(Preview)
     B --> C{decide}
@@ -386,6 +366,18 @@ graph TD
     E --> B
     D --> F[Save Image and Code]
     F --> B
+```
+
+```mermaid
+gantt
+    title A Gantt Diagram
+    dateFormat  YYYY-MM-DD
+    section Section
+    A task           :a1, 2014-01-01, 30d
+    Another task     :after a1  , 20d
+    section Another
+    Task in sec      :2014-01-12  , 12d
+    another task      : 24d
 ```
 
 ### End
