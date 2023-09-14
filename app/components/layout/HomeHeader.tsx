@@ -1,12 +1,27 @@
+import type { LinksFunction } from '@remix-run/node';
 import { NavLink } from '@remix-run/react';
 
 import { useEffect, useState } from 'react';
+
+import { Theme, useTheme } from 'remix-themes';
+
+import styles from '~/styles/components/home-header.css';
+
+export const links: LinksFunction = () => {
+  return [
+    {
+      rel: 'stylesheet',
+      href: styles,
+    },
+  ];
+};
 
 export default function HomeHeader() {
   const [url, setUrl] = useState('/posts');
   useEffect(() => {
     setUrl(window.ENV.BLOG_URL);
   }, []);
+  const [, setTheme] = useTheme();
 
   const navList = [
     {
@@ -35,6 +50,12 @@ export default function HomeHeader() {
           );
         })}
         <a href={url}>Blog</a>
+        <button
+          type="button"
+          onClick={() => setTheme(prev => (prev === Theme.DARK ? Theme.LIGHT : Theme.DARK))}
+        >
+          Toggle theme
+        </button>
       </div>
     </div>
   );
