@@ -1,5 +1,5 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { Center, Divider, Link } from '@chakra-ui/react';
+import { Box, Center, Divider, Link, useColorModeValue } from '@chakra-ui/react';
 import type { LinksFunction } from '@remix-run/node';
 
 import AvatarImage from '~/assets/image/avatar.jpeg';
@@ -84,18 +84,22 @@ export default function Home() {
     },
   ];
 
+  const textColor = useColorModeValue('gray.800', 'gray.100');
+  const blackTextColor = useColorModeValue('text-black', 'text-white');
+  const highlight = `font-bold ${blackTextColor}`;
+
   return (
-    <div className="space-y-4">
+    <Box className="space-y-4" color={textColor}>
       <div className="flex flex-row items-center space-x-8">
         <Avatar imgUrl={AvatarImage} fallback="Ryo" size="lg" />
         <div className="smiley-sans">
-          <Name className="font-bold text-3xl text-black" values={names} />
+          <Name className={`text-3xl ${highlight}`} values={names} />
           <p>Software Developer / Shanghai</p>
         </div>
       </div>
       <p className="pt-4">
-        Hi 👋, I'm <span className="highlight">Slinvent</span>, a curious{' '}
-        <span className="highlight">Software Developer</span> located in Shanghai, China.
+        Hi 👋, I'm <span className={highlight}>Slinvent</span>, a curious{' '}
+        <span className={highlight}>Software Developer</span> located in Shanghai, China.
       </p>
       <p>
         I am working on a variety of technologies including Web Development and Backend Development.
@@ -111,9 +115,9 @@ export default function Home() {
       <p>
         Find me on{' '}
         <Link textDecoration="underline" href="https://github.com/lwshen" isExternal>
-          Github <ExternalLinkIcon mx="2px" />
+          <span className={blackTextColor}>Github</span> <ExternalLinkIcon mx="2px" />
         </Link>
       </p>
-    </div>
+    </Box>
   );
 }

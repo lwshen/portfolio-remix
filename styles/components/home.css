@@ -1,7 +1,3 @@
-.highlight {
-  @apply text-black font-bold;
-}
-
 .separator-root {
   @apply bg-neutral-300;
   @apply mx-auto;
