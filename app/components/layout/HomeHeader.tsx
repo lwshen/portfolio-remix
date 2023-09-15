@@ -39,7 +39,7 @@ export default function HomeHeader() {
           );
         })}
         <a href={url}>Blog</a>
-        <Button onClick={toggleColorMode}>
+        <Button variant="ghost" onClick={toggleColorMode}>
           {colorMode === 'light' ? <SunIcon /> : <MoonIcon />}
         </Button>
       </div>
