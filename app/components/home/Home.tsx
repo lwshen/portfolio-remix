@@ -84,12 +84,11 @@ export default function Home() {
     },
   ];
 
-  const textColor = useColorModeValue('gray.800', 'gray.100');
   const blackTextColor = useColorModeValue('text-black', 'text-white');
   const highlight = `font-bold ${blackTextColor}`;
 
   return (
-    <Box className="space-y-4" color={textColor}>
+    <Box className="space-y-4">
       <div className="flex flex-row items-center space-x-8">
         <Avatar imgUrl={AvatarImage} fallback="Ryo" size="lg" />
         <div className="smiley-sans">
