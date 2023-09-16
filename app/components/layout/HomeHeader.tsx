@@ -1,3 +1,5 @@
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { Button, useColorMode } from '@chakra-ui/react';
 import { NavLink } from '@remix-run/react';
 
 import { useEffect, useState } from 'react';
@@ -7,6 +9,8 @@ export default function HomeHeader() {
   useEffect(() => {
     setUrl(window.ENV.BLOG_URL);
   }, []);
+
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const navList = [
     {
@@ -35,6 +39,9 @@ export default function HomeHeader() {
           );
         })}
         <a href={url}>Blog</a>
+        <Button variant="ghost" onClick={toggleColorMode}>
+          {colorMode === 'light' ? <SunIcon /> : <MoonIcon />}
+        </Button>
       </div>
     </div>
   );
