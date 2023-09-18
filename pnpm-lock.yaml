@@ -77,8 +77,8 @@ devDependencies:
     specifier: ^1.19.3
     version: 1.19.3(@remix-run/serve@1.19.3)(@types/node@20.6.0)(ts-node@10.9.1)
   '@remix-run/eslint-config':
-    specifier: ^1.19.3
-    version: 1.19.3(eslint@8.49.0)(react@18.2.0)(typescript@5.2.2)
+    specifier: ^2.0.0
+    version: 2.0.0(eslint@8.49.0)(react@18.2.0)(typescript@5.2.2)
   '@tailwindcss/typography':
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.3.3)
@@ -228,7 +228,7 @@ packages:
     resolution: {integrity: sha512-oLcVCTeIFadUoArDTwpluncplrYBmTCCZZgXCbgNGvOBBiSDDK3eWO4b/+eOTli5tKv1lg+a5/NAXg+nTcei1w==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.17.0
+      '@babel/types': 7.22.17
       jsesc: 2.5.2
       source-map: 0.5.7
     dev: true
@@ -1437,7 +1437,7 @@ packages:
       '@babel/helper-hoist-variables': 7.22.5
       '@babel/helper-split-export-declaration': 7.22.6
       '@babel/parser': 7.22.16
-      '@babel/types': 7.17.0
+      '@babel/types': 7.22.17
       debug: 4.3.4
       globals: 11.12.0
     transitivePeerDependencies:
@@ -3438,13 +3438,13 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@remix-run/eslint-config@1.19.3(eslint@8.49.0)(react@18.2.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-8yvPtsJj1hBKp6ypTTDhHmJ2ftoPmBV1xPPOIqhMLDQ1fwmzocwnkz9RHTeMYkdNSzUuqGnpGaMTHgrT3WfckQ==}
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+  /@remix-run/eslint-config@2.0.0(eslint@8.49.0)(react@18.2.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-zGkP8BGKDU41TkWnWMqkz/OsNacYoqiTAGzc8PzkmILdEHFfj6IFiseCLMdzZppYFLoZQGo8/Lpe1b7IidxDOg==}
+    engines: {node: '>=18.0.0'}
     peerDependencies:
       eslint: ^8.0.0
-      react: ^17.0.0 || ^18.0.0
-      typescript: ^4.0.0 || ^5.0.0
+      react: ^18.0.0
+      typescript: ^5.1.0
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -6572,7 +6572,7 @@ packages:
       '@types/glob': 7.2.0
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.2.11
+      fast-glob: 3.3.1
       glob: 7.2.3
       ignore: 5.2.4
       merge2: 1.4.1

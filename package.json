@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@remix-run/dev": "^1.19.3",
-    "@remix-run/eslint-config": "^1.19.3",
+    "@remix-run/eslint-config": "^2.0.0",
     "@tailwindcss/typography": "^0.5.10",
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "@types/katex": "^0.16.3",
