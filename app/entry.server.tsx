@@ -89,8 +89,13 @@ function handleBrowserRequest(
   responseHeaders: Headers,
   remixContext: EntryContext
 ) {
-  return new Promise((resolve, reject) => {
+  // eslint-disable-next-line no-async-promise-executor
+  return new Promise(async (resolve, reject) => {
     let didError = false;
+    const context =
+      process.env.NODE_ENV === 'development'
+        ? await import('remix-development-tools').then(({ initServer }) => initServer(remixContext))
+        : remixContext;
 
     const cache = createEmotionCache();
     const { extractCriticalToChunks } = createEmotionServer(cache);
@@ -98,7 +103,7 @@ function handleBrowserRequest(
     const html = renderToString(
       <ServerStyleContext.Provider value={null}>
         <CacheProvider value={cache}>
-          <RemixServer context={remixContext} url={request.url} />
+          <RemixServer context={context} url={request.url} />
         </CacheProvider>
       </ServerStyleContext.Provider>
     );
@@ -108,7 +113,7 @@ function handleBrowserRequest(
     const { pipe, abort } = renderToPipeableStream(
       <ServerStyleContext.Provider value={chunks.styles}>
         <CacheProvider value={cache}>
-          <RemixServer context={remixContext} url={request.url} />
+          <RemixServer context={context} url={request.url} />
         </CacheProvider>
       </ServerStyleContext.Provider>,
       {
