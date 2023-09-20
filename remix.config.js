@@ -11,6 +11,7 @@ module.exports = {
     v2_dev: true,
   },
   serverModuleFormat: 'cjs',
+  postcss: true,
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",
   // serverBuildPath: "build/index.js",

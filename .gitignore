@@ -9,5 +9,3 @@ node_modules
 /public/build
 
 .env
-# following folder will auto generated
-app/styles
