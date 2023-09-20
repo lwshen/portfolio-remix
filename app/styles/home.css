@@ -1,0 +1,14 @@
+.separator-root {
+  --tw-bg-opacity: 1;
+  background-color: rgb(212 212 212 / var(--tw-bg-opacity));
+  margin-left: auto;
+  margin-right: auto;
+}
+.separator-root[data-orientation='horizontal'] {
+  height: 1px;
+  width: 150px;
+}
+.separator-root[data-orientation='vertical'] {
+  height: 100%;
+  width: 1px;
+}

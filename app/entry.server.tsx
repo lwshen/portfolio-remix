@@ -1,7 +1,6 @@
 import { CacheProvider } from '@emotion/react';
 import createEmotionServer from '@emotion/server/create-instance';
-import type { EntryContext } from '@remix-run/node';
-import { Response } from '@remix-run/node';
+import { type EntryContext, createReadableStreamFromReadable } from '@remix-run/node';
 import { RemixServer } from '@remix-run/react';
 
 import { renderToPipeableStream, renderToString } from 'react-dom/server';
@@ -60,7 +59,7 @@ function handleBotRequest(
           responseHeaders.set('Content-Type', 'text/html');
 
           resolve(
-            new Response(body, {
+            new Response(createReadableStreamFromReadable(body), {
               headers: responseHeaders,
               status: didError ? 500 : responseStatusCode,
             })
@@ -123,7 +122,7 @@ function handleBrowserRequest(
           responseHeaders.set('Content-Type', 'text/html');
 
           resolve(
-            new Response(body, {
+            new Response(createReadableStreamFromReadable(body), {
               headers: responseHeaders,
               status: didError ? 500 : responseStatusCode,
             })

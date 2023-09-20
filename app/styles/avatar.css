@@ -1,0 +1,36 @@
+.AvatarRoot {
+  border-radius: 9999px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(243 244 246 / var(--tw-border-opacity));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none
+}
+
+.AvatarImage {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: inherit
+}
+
+.AvatarFallback {
+  height: 100%;
+  width: 100%;
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 500
+}
