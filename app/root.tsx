@@ -1,7 +1,12 @@
 import { ChakraProvider, cookieStorageManagerSSR } from '@chakra-ui/react';
 import { withEmotionCache } from '@emotion/react';
 import { json } from '@remix-run/node';
-import type { LinksFunction, LoaderFunction, V2_MetaFunction } from '@remix-run/node';
+import type {
+  LinksFunction,
+  LoaderFunction,
+  LoaderFunctionArgs,
+  MetaFunction,
+} from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -22,7 +27,7 @@ import tailwindStylesUrl from '~/styles/tailwind.css';
 import { theme } from '~/theme';
 import type { Env } from '~/types/global';
 
-export const meta: V2_MetaFunction = () => [
+export const meta: MetaFunction = () => [
   {
     charset: 'utf-8',
   },
@@ -44,13 +49,13 @@ export const links: LinksFunction = () => {
   ];
 };
 
-export const loader: LoaderFunction = async ({ request }) => {
+export const loader: LoaderFunction = async ({ request }: LoaderFunctionArgs) => {
   return json({
     ENV: {
       BLOG_URL,
       BEIAN,
     } as Env,
-    cookies: request.headers.get('cookie') ?? '',
+    cookies: request.headers.get('Cookie') ?? '',
   });
 };
 
@@ -61,7 +66,7 @@ interface DocumentProps {
 
 const Document = withEmotionCache(
   ({ children, title = `Slinvent` }: DocumentProps, emotionCache) => {
-    const data = useLoaderData<typeof loader>();
+    const data = useLoaderData<{ ENV: Env; cookies: string }>();
     const serverStyleData = useContext(ServerStyleContext);
     const clientStyleData = useContext(ClientStyleContext);
 
