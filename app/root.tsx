@@ -12,7 +12,7 @@ import {
   useLoaderData,
 } from '@remix-run/react';
 
-import React, { useContext, useEffect, useMemo } from 'react';
+import React, { Suspense, lazy, useContext, useEffect, useMemo } from 'react';
 
 import AppLayout from '~/components/layout/AppLayout';
 import { ClientStyleContext, ServerStyleContext } from '~/context';
@@ -111,6 +111,9 @@ const Document = withEmotionCache(
       clientStyleData?.reset();
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+    const RemixDevTools =
+      process.env.NODE_ENV === 'development' ? lazy(() => import('remix-development-tools')) : null;
+
     return (
       <html
         lang="en"
@@ -147,6 +150,11 @@ const Document = withEmotionCache(
           />
           <Scripts />
           <LiveReload />
+          {RemixDevTools ? (
+            <Suspense>
+              <RemixDevTools />
+            </Suspense>
+          ) : null}
         </body>
       </html>
     );
