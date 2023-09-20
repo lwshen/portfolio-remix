@@ -4,10 +4,10 @@
   "scripts": {
     "prepare": "husky install",
     "build": "run-s \"build:*\"",
-    "build:css": "postcss styles/**/*.css --dir app/styles --env production",
+    "build:css": "postcss styles --base styles --dir app/styles --env production",
     "build:remix": "remix build",
     "dev": "run-p \"dev:*\"",
-    "dev:css": "postcss styles/**/*.css --dir app/styles --watch",
+    "dev:css": "postcss styles --base styles --dir app/styles --watch",
     "dev:remix": "remix dev",
     "start": "remix-serve build",
     "typecheck": "tsc -b",
