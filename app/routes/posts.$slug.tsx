@@ -5,7 +5,7 @@ import invariant from 'tiny-invariant';
 
 import highlightStylesUrl from '~/styles/atom-one-dark.css';
 import katexStylesUrl from '~/styles/katex.css';
-import { getPost } from '~/utils/post';
+import { getPost } from '~/utils/post.server';
 
 export const links: LinksFunction = () => {
   return [
