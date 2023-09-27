@@ -21,11 +21,11 @@ import React, { Suspense, lazy, useContext, useEffect, useMemo } from 'react';
 
 import AppLayout from '~/components/layout/AppLayout';
 import { ClientStyleContext, ServerStyleContext } from '~/context';
-import { BEIAN, BLOG_URL } from '~/server/config.server';
+import type { PublicEnv } from '~/server/config.public.server';
+import env from '~/server/config.public.server';
 import globalStylesUrl from '~/styles/global.css';
 import tailwindStylesUrl from '~/styles/tailwind.css';
 import { theme } from '~/theme';
-import type { Env } from '~/types/global';
 
 export const meta: MetaFunction = () => [
   {
@@ -51,10 +51,7 @@ export const links: LinksFunction = () => {
 
 export const loader: LoaderFunction = async ({ request }: LoaderFunctionArgs) => {
   return json({
-    ENV: {
-      BLOG_URL,
-      BEIAN,
-    } as Env,
+    ENV: env,
     cookies: request.headers.get('Cookie') ?? '',
   });
 };
@@ -66,7 +63,7 @@ interface DocumentProps {
 
 const Document = withEmotionCache(
   ({ children, title = `Slinvent` }: DocumentProps, emotionCache) => {
-    const data = useLoaderData<{ ENV: Env; cookies: string }>();
+    const data = useLoaderData<{ ENV: PublicEnv; cookies: string }>();
     const serverStyleData = useContext(ServerStyleContext);
     const clientStyleData = useContext(ClientStyleContext);
 

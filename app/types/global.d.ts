@@ -1,10 +1,7 @@
-export type Env = {
-  BLOG_URL: string;
-  BEIAN: string;
-};
+import type { PublicEnv } from '~/server/config.public.server';
 
 declare global {
   interface Window {
-    ENV: Env;
+    ENV: PublicEnv;
   }
 }
