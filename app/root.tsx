@@ -1,12 +1,7 @@
 import { ChakraProvider, cookieStorageManagerSSR } from '@chakra-ui/react';
 import { withEmotionCache } from '@emotion/react';
 import { json } from '@remix-run/node';
-import type {
-  LinksFunction,
-  LoaderFunction,
-  LoaderFunctionArgs,
-  MetaFunction,
-} from '@remix-run/node';
+import type { DataFunctionArgs, LinksFunction, MetaFunction } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -25,7 +20,6 @@ import { BEIAN, BLOG_URL } from '~/server/config.server';
 import globalStylesUrl from '~/styles/global.css';
 import tailwindStylesUrl from '~/styles/tailwind.css';
 import { theme } from '~/theme';
-import type { Env } from '~/types/global';
 
 export const meta: MetaFunction = () => [
   {
@@ -49,12 +43,12 @@ export const links: LinksFunction = () => {
   ];
 };
 
-export const loader: LoaderFunction = async ({ request }: LoaderFunctionArgs) => {
+export const loader = async ({ request }: DataFunctionArgs) => {
   return json({
-    ENV: {
+    env: {
       BLOG_URL,
       BEIAN,
-    } as Env,
+    },
     cookies: request.headers.get('Cookie') ?? '',
   });
 };
@@ -66,7 +60,7 @@ interface DocumentProps {
 
 const Document = withEmotionCache(
   ({ children, title = `Slinvent` }: DocumentProps, emotionCache) => {
-    const data = useLoaderData<{ ENV: Env; cookies: string }>();
+    const data = useLoaderData<typeof loader>();
     const serverStyleData = useContext(ServerStyleContext);
     const clientStyleData = useContext(ClientStyleContext);
 
@@ -148,11 +142,6 @@ const Document = withEmotionCache(
             {children}
           </ChakraProvider>
           <ScrollRestoration />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `window.ENV = ${JSON.stringify(data.ENV)}`,
-            }}
-          />
           <Scripts />
           <LiveReload />
           {RemixDevTools ? (
