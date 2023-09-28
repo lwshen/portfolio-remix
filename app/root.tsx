@@ -1,12 +1,7 @@
 import { ChakraProvider, cookieStorageManagerSSR } from '@chakra-ui/react';
 import { withEmotionCache } from '@emotion/react';
 import { json } from '@remix-run/node';
-import type {
-  LinksFunction,
-  LoaderFunction,
-  LoaderFunctionArgs,
-  MetaFunction,
-} from '@remix-run/node';
+import type { DataFunctionArgs, LinksFunction, MetaFunction } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -49,9 +44,9 @@ export const links: LinksFunction = () => {
   ];
 };
 
-export const loader: LoaderFunction = async ({ request }: LoaderFunctionArgs) => {
+export const loader = async ({ request }: DataFunctionArgs) => {
   return json({
-    ENV: env,
+    env: env,
     cookies: request.headers.get('Cookie') ?? '',
   });
 };
@@ -63,7 +58,7 @@ interface DocumentProps {
 
 const Document = withEmotionCache(
   ({ children, title = `Slinvent` }: DocumentProps, emotionCache) => {
-    const data = useLoaderData<{ ENV: PublicEnv; cookies: string }>();
+    const data = useLoaderData<{ env: PublicEnv; cookies: string }>();
     const serverStyleData = useContext(ServerStyleContext);
     const clientStyleData = useContext(ClientStyleContext);
 
@@ -145,11 +140,6 @@ const Document = withEmotionCache(
             {children}
           </ChakraProvider>
           <ScrollRestoration />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `window.ENV = ${JSON.stringify(data.ENV)}`,
-            }}
-          />
           <Scripts />
           <LiveReload />
           {RemixDevTools ? (

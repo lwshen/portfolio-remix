@@ -1,26 +1,11 @@
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { Button, useColorMode } from '@chakra-ui/react';
-import { json } from '@remix-run/node';
-import { NavLink, useLoaderData } from '@remix-run/react';
+import { NavLink } from '@remix-run/react';
 
-import { useEffect, useState } from 'react';
-
-export const loader = async () => {
-  let blogUrl = process.env.BLOG_URL;
-  if (!blogUrl) {
-    blogUrl = '/posts';
-  }
-  return json({
-    BLOG_URL: blogUrl,
-  });
-};
+import { useRootData } from '~/hooks/useRootData';
 
 export default function HomeHeader() {
-  const { BLOG_URL } = useLoaderData<typeof loader>();
-  const [url, setUrl] = useState('/posts');
-  useEffect(() => {
-    setUrl(window.ENV.BLOG_URL);
-  }, []);
+  const rootData = useRootData();
 
   const { colorMode, toggleColorMode } = useColorMode();
 
@@ -50,8 +35,7 @@ export default function HomeHeader() {
             </NavLink>
           );
         })}
-        <a href={url}>Blog</a>
-        <span>{BLOG_URL}</span>
+        <a href={rootData.env.BLOG_URL}>Blog</a>
         <Button variant="ghost" onClick={toggleColorMode}>
           {colorMode === 'light' ? <SunIcon /> : <MoonIcon />}
         </Button>
