@@ -4,7 +4,7 @@ import { redirect } from '@remix-run/node';
 import { Form } from '@remix-run/react';
 
 import type { Post } from '~/types/post';
-import { createPost } from '~/utils/post';
+import { createPost } from '~/utils/post.server';
 
 export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData();

@@ -1,6 +1,6 @@
 import { Link, useLoaderData } from '@remix-run/react';
 
-import { getPosts } from '~/utils/post';
+import { getPosts } from '~/utils/post.server';
 
 export const loader = getPosts;
 

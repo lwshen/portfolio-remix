@@ -11,7 +11,7 @@ export const validateAttribute = (fontMatter: Record<string, unknown>): DocAttri
   DocAttributeSchema.parse(fontMatter);
 
 // relative to the server output not the source!
-export const postsPath = path.join(__dirname, '..', 'posts');
+export const postsPath = path.join(process.cwd(), 'posts');
 
 const parseFrontMatter = (
   filePath: string
