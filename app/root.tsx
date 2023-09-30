@@ -16,10 +16,13 @@ import React, { Suspense, lazy, useContext, useEffect, useMemo } from 'react';
 
 import AppLayout from '~/components/layout/AppLayout';
 import { ClientStyleContext, ServerStyleContext } from '~/context';
-import { BEIAN, BLOG_URL } from '~/server/config.server';
+import type { PublicEnv } from '~/server/config.public.server';
+import env from '~/server/config.public.server';
 import globalStylesUrl from '~/styles/global.css';
 import tailwindStylesUrl from '~/styles/tailwind.css';
 import { theme } from '~/theme';
+
+import { getUserProfile } from './server/profile.server';
 
 export const meta: MetaFunction = () => [
   {
@@ -43,13 +46,12 @@ export const links: LinksFunction = () => {
   ];
 };
 
-export const loader = async ({ request }: DataFunctionArgs) => {
+export const loader = async (ctx: DataFunctionArgs) => {
+  const profile = await getUserProfile(ctx);
   return json({
-    env: {
-      BLOG_URL,
-      BEIAN,
-    },
-    cookies: request.headers.get('Cookie') ?? '',
+    env,
+    profile,
+    cookies: ctx.request.headers.get('Cookie') ?? '',
   });
 };
 
@@ -60,7 +62,7 @@ interface DocumentProps {
 
 const Document = withEmotionCache(
   ({ children, title = `Slinvent` }: DocumentProps, emotionCache) => {
-    const data = useLoaderData<typeof loader>();
+    const data = useLoaderData<{ env: PublicEnv; cookies: string }>();
     const serverStyleData = useContext(ServerStyleContext);
     const clientStyleData = useContext(ClientStyleContext);
 

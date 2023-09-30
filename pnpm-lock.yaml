@@ -65,6 +65,12 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  remix-auth:
+    specifier: ^3.5.1
+    version: 3.5.1(@remix-run/react@2.0.0)(@remix-run/server-runtime@1.19.3)
+  remix-auth-auth0:
+    specifier: ^1.7.0
+    version: 1.7.0(@remix-run/server-runtime@1.19.3)(remix-auth@3.5.1)
   tiny-invariant:
     specifier: ^1.3.1
     version: 1.3.1
@@ -3272,6 +3278,11 @@ packages:
       react-router-dom: 6.16.0(react-dom@18.2.0)(react@18.2.0)
       typescript: 5.2.2
 
+  /@remix-run/router@1.7.2:
+    resolution: {integrity: sha512-7Lcn7IqGMV+vizMPoEl5F0XDshcdDYtMI6uJLQdQz5CfZAwy3vvGKYSUk789qndt5dEC4HfSjviSYlSoHGL2+A==}
+    engines: {node: '>=14'}
+    dev: false
+
   /@remix-run/router@1.9.0:
     resolution: {integrity: sha512-bV63itrKBC0zdT27qYm6SDZHlkXwFL1xMBuhkn+X7l0+IIhNaH5wuuvZKp6eKhCD4KFhujhfhCT1YxXW6esUIA==}
     engines: {node: '>=14.0.0'}
@@ -3292,6 +3303,18 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - typescript
+
+  /@remix-run/server-runtime@1.19.3:
+    resolution: {integrity: sha512-KzQ+htUsKqpBgKE2tWo7kIIGy3MyHP58Io/itUPvV+weDjApwr9tQr9PZDPA3yAY6rAzLax7BU0NMSYCXWFY5A==}
+    engines: {node: '>=14.0.0'}
+    dependencies:
+      '@remix-run/router': 1.7.2
+      '@types/cookie': 0.4.1
+      '@web3-storage/multipart-parser': 1.0.0
+      cookie: 0.4.2
+      set-cookie-parser: 2.6.0
+      source-map: 0.7.4
+    dev: false
 
   /@remix-run/server-runtime@2.0.0(typescript@5.2.2):
     resolution: {integrity: sha512-HaNszj/mp/A1Qz5sVupVIXqDyeEni3nwW5iKDqGAqv0n8E6FRkzEhOtAJypRABcKWBq0M9VM3fm6IO0vaMti8Q==}
@@ -4793,7 +4816,6 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
-    dev: true
 
   /decode-named-character-reference@1.0.2:
     resolution: {integrity: sha512-O8x12RzrUF8xyVcY0KJowWsmaJxQbmy0/EtnNtHRpsOcT7dFk5W598coHqBVpmWo1oQQfsCqfCmkZN5DJrZVdg==}
@@ -7748,7 +7770,6 @@ packages:
 
   /ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
-    dev: true
 
   /ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
@@ -8887,6 +8908,43 @@ packages:
       unified: 10.1.2
     dev: true
 
+  /remix-auth-auth0@1.7.0(@remix-run/server-runtime@1.19.3)(remix-auth@3.5.1):
+    resolution: {integrity: sha512-I6Au+6Witb6Ae1JmQEaOcKfaYCxayL5lsNJAQs4skuh0PRi2xZpB1oSH5NL9WN1+xZ29GnD56JDvSw0N/m3Qiw==}
+    peerDependencies:
+      remix-auth: ^3.x
+    dependencies:
+      remix-auth: 3.5.1(@remix-run/react@2.0.0)(@remix-run/server-runtime@1.19.3)
+      remix-auth-oauth2: 1.9.0(@remix-run/server-runtime@1.19.3)(remix-auth@3.5.1)
+    transitivePeerDependencies:
+      - '@remix-run/server-runtime'
+      - supports-color
+    dev: false
+
+  /remix-auth-oauth2@1.9.0(@remix-run/server-runtime@1.19.3)(remix-auth@3.5.1):
+    resolution: {integrity: sha512-ROSir28FVK4UCpialrW6dGbaboYGihfa/Qz5ifAoQ56fyTfXv4TwZ4R/AQxr1HVRU6WFmXNJiWDg51Q6+ZoLGQ==}
+    peerDependencies:
+      '@remix-run/server-runtime': ^1.0.0
+      remix-auth: ^3.2.2
+    dependencies:
+      '@remix-run/server-runtime': 1.19.3
+      debug: 4.3.4
+      remix-auth: 3.5.1(@remix-run/react@2.0.0)(@remix-run/server-runtime@1.19.3)
+      uuid: 8.3.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /remix-auth@3.5.1(@remix-run/react@2.0.0)(@remix-run/server-runtime@1.19.3):
+    resolution: {integrity: sha512-PH8JTMd2n4OoQE7xGoCMDvrPyHfDvKMNEi8VT3Lvi/g3+HlJERHWXdYBOSl0TImEYOprs8VI/nC82y47aKJrJQ==}
+    peerDependencies:
+      '@remix-run/react': ^1.0.0
+      '@remix-run/server-runtime': ^1.0.0
+    dependencies:
+      '@remix-run/react': 2.0.0(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      '@remix-run/server-runtime': 1.19.3
+      uuid: 8.3.2
+    dev: false
+
   /remix-development-tools@2.4.0(@babel/runtime@7.22.15)(@remix-run/react@2.0.0)(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-HRoX49a9vGVPyC+y4UvqLxDq+8Ag+Xhds52hdBxu8JQbJ4W6az2zWuuMLA/KyAk/aykQ8aPp2y/pukwZ4bZecQ==}
     peerDependencies:
@@ -10020,7 +10078,6 @@ packages:
   /uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
-    dev: true
 
   /uvu@0.5.6:
     resolution: {integrity: sha512-+g8ENReyr8YsOc6fv/NVJs2vFdHBnBNdfE49rshrTzDWOlUx4Gq7KOS2GD8eqhy2j+Ejq29+SbKH8yjkAqXqoA==}
