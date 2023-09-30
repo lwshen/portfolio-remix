@@ -12,7 +12,10 @@ import {
   useLoaderData,
 } from '@remix-run/react';
 
-import React, { Suspense, lazy, useContext, useEffect, useMemo } from 'react';
+import React, { useContext, useEffect, useMemo } from 'react';
+
+import { withDevTools } from 'remix-development-tools';
+import rdtStylesheet from 'remix-development-tools/index.css';
 
 import AppLayout from '~/components/layout/AppLayout';
 import { ClientStyleContext, ServerStyleContext } from '~/context';
@@ -34,7 +37,7 @@ export const meta: MetaFunction = () => [
 ];
 
 export const links: LinksFunction = () => {
-  return [
+  const links = [
     {
       rel: 'stylesheet',
       href: tailwindStylesUrl,
@@ -44,6 +47,10 @@ export const links: LinksFunction = () => {
       href: globalStylesUrl,
     },
   ];
+  if (process.env.NODE_ENV === 'development') {
+    links.push({ rel: 'stylesheet', href: rdtStylesheet });
+  }
+  return links;
 };
 
 export const loader = async (ctx: DataFunctionArgs) => {
@@ -112,9 +119,6 @@ const Document = withEmotionCache(
       clientStyleData?.reset();
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    const RemixDevTools =
-      process.env.NODE_ENV === 'development' ? lazy(() => import('remix-development-tools')) : null;
-
     return (
       <html
         lang="en"
@@ -146,18 +150,13 @@ const Document = withEmotionCache(
           <ScrollRestoration />
           <Scripts />
           <LiveReload />
-          {RemixDevTools ? (
-            <Suspense>
-              <RemixDevTools />
-            </Suspense>
-          ) : null}
         </body>
       </html>
     );
   }
 );
 
-export default function App() {
+function App() {
   return (
     <Document>
       <AppLayout>
@@ -166,3 +165,11 @@ export default function App() {
     </Document>
   );
 }
+
+let AppExport = App;
+// This imports the dev tools only if you're in development
+if (process.env.NODE_ENV === 'development') {
+  AppExport = withDevTools(AppExport);
+}
+
+export default AppExport;
