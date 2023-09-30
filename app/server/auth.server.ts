@@ -6,6 +6,7 @@ import { sessionStorage } from '~/server/session.server';
 
 export type User = {
   id: string;
+  json: string;
 };
 
 // Create an instance of the authenticator, pass a generic with what
@@ -26,6 +27,7 @@ const auth0Strategy = new Auth0Strategy(
 
     return {
       id: profile.id,
+      json: JSON.stringify(profile),
     };
   }
 );

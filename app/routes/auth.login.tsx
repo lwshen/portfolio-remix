@@ -1,10 +1,21 @@
+import { redirect } from '@remix-run/node';
 import type { LoaderFunction } from '@remix-run/node';
 
 import { authenticator } from '~/server/auth.server';
+import { adminPath } from '~/utils/router';
 
-export const loader: LoaderFunction = ({ request }) => {
+export const loader: LoaderFunction = async ({ request }) => {
+  const profile = await authenticator.isAuthenticated(request);
+
+  const url = new URL(request.url);
+  let returnTo = url.searchParams.get('redirect') ?? adminPath();
+
+  if (profile) {
+    throw redirect(returnTo);
+  }
+
   return authenticator.authenticate('auth0', request, {
-    successRedirect: '/',
+    successRedirect: returnTo,
     throwOnError: true,
   });
 };

@@ -22,6 +22,8 @@ import globalStylesUrl from '~/styles/global.css';
 import tailwindStylesUrl from '~/styles/tailwind.css';
 import { theme } from '~/theme';
 
+import { getUserProfile } from './server/profile.server';
+
 export const meta: MetaFunction = () => [
   {
     charset: 'utf-8',
@@ -44,10 +46,12 @@ export const links: LinksFunction = () => {
   ];
 };
 
-export const loader = async ({ request }: DataFunctionArgs) => {
+export const loader = async (ctx: DataFunctionArgs) => {
+  const profile = await getUserProfile(ctx);
   return json({
-    env: env,
-    cookies: request.headers.get('Cookie') ?? '',
+    env,
+    profile,
+    cookies: ctx.request.headers.get('Cookie') ?? '',
   });
 };
 
