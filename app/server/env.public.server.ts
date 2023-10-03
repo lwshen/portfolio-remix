@@ -1,4 +1,4 @@
-import serverEnv from './config.server';
+import serverEnv from './env.server';
 
 /**
  * Environment variables we want to send to the UI inlined in the document.

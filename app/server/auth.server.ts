@@ -1,7 +1,7 @@
 import { Authenticator } from 'remix-auth';
 import { Auth0Strategy } from 'remix-auth-auth0';
 
-import env from '~/server/config.server';
+import env from '~/server/env.server';
 import { sessionStorage } from '~/server/session.server';
 
 export type User = {
