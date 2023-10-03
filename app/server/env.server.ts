@@ -1,15 +1,15 @@
-/* SERVER CONFIG */
-const env = {
-  BLOG_URL: process.env.BLOG_URL || '/posts',
-  BEIAN: process.env.BEIAN || '',
+import { parseEnv } from 'znv';
+import { z } from 'zod';
+
+export const env = parseEnv(process.env, {
+  BLOG_URL: z.string().default('/posts'),
+  BEIAN: z.string().default(''),
 
   // Authentication
-  AUTH_SECRET: process.env.AUTH_SECRET,
-  AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
-  AUTH0_CLIENT_SECRET: process.env.AUTH0_CLIENT_SECRET,
-  AUTH0_ISSUER_BASE_URL: process.env.AUTH0_ISSUER_BASE_URL,
-};
-
-export type ServerEnv = typeof env;
+  AUTH_SECRET: z.string().optional(),
+  AUTH0_CLIENT_ID: z.string().optional(),
+  AUTH0_CLIENT_SECRET: z.string().optional(),
+  AUTH0_ISSUER_BASE_URL: z.string().optional(),
+});
 
 export default env;
