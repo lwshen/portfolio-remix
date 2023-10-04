@@ -19,8 +19,8 @@ import rdtStylesheet from 'remix-development-tools/index.css';
 
 import AppLayout from '~/components/layout/AppLayout';
 import { ClientStyleContext, ServerStyleContext } from '~/context';
-import type { PublicEnv } from '~/server/config.public.server';
-import env from '~/server/config.public.server';
+import type { PublicEnv } from '~/server/env.public.server';
+import env from '~/server/env.public.server';
 import globalStylesUrl from '~/styles/global.css';
 import tailwindStylesUrl from '~/styles/tailwind.css';
 import { theme } from '~/theme';
