@@ -13,8 +13,9 @@ import {
 
 import DotfilesImage from '~/assets/image/project/dotfiles.png';
 import PortfolioImage from '~/assets/image/project/portfolio.png';
+import Title from '~/components/Title';
 
-export default function Project() {
+export default function Projects() {
   const projects = [
     {
       title: 'Portfolio',
@@ -33,7 +34,7 @@ export default function Project() {
 
   return (
     <div>
-      <p className="text-3xl font-bold pb-8 jin-bu-ti">Projects</p>
+      <Title>Projects</Title>
       <SimpleGrid columns={2} spacing={10}>
         {projects.map((project, idx) => {
           return (
