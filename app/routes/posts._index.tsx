@@ -1,5 +1,9 @@
 import { Link, useLoaderData } from '@remix-run/react';
 
+import { motion } from 'framer-motion';
+
+import Title from '~/components/Title';
+import { FADE_DOWN_ANIMATION_VARIANTS } from '~/utils/constants';
 import { getPosts } from '~/utils/post.server';
 
 export const loader = getPosts;
@@ -8,14 +12,26 @@ export default function Posts_index() {
   const posts = useLoaderData<typeof loader>();
   return (
     <div>
-      <p className="text-3xl font-bold pb-8 jin-bu-ti">Posts</p>
-      <ul>
+      <Title>Posts</Title>
+      <motion.div
+        initial="hidden"
+        animate="show"
+        viewport={{ once: true }}
+        variants={{
+          hidden: {},
+          show: {
+            transition: {
+              staggerChildren: 0.15,
+            },
+          },
+        }}
+      >
         {posts.map(post => (
-          <li key={post.slug}>
+          <motion.p key={post.slug} variants={FADE_DOWN_ANIMATION_VARIANTS}>
             <Link to={post.slug}>{post.attribute.title}</Link>
-          </li>
+          </motion.p>
         ))}
-      </ul>
+      </motion.div>
     </div>
   );
 }

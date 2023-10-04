@@ -16,7 +16,7 @@ export default function HomeHeader() {
     },
     {
       label: 'Projects',
-      url: 'project',
+      url: '/projects',
     },
   ];
 
