@@ -1,11 +1,8 @@
-import { Button, Grid, GridItem, Input, Textarea } from '@chakra-ui/react';
+import { Button, Input, Textarea } from '@chakra-ui/react';
 import type { ActionFunction } from '@remix-run/node';
 import { redirect } from '@remix-run/node';
 import { Form } from '@remix-run/react';
 
-import { useState } from 'react';
-
-import MarkdownRender from '~/components/MarkdownRender';
 import type { Post } from '~/types/post';
 import { createPost } from '~/utils/post.server';
 
@@ -27,45 +24,28 @@ export const action: ActionFunction = async ({ request }) => {
 };
 
 export default function NewPost() {
-  let [markdown, setMarkdown] = useState('');
-
   return (
     <Form className="space-y-2" method="post">
-      <div>
+      <p>
         <label>
           Post Title: <Input type="text" name="title" />
         </label>
-      </div>
-      <div>
+      </p>
+      <p>
         <label>
           Post Slug: <Input type="text" name="slug" />
         </label>
-      </div>
-      <div>
+      </p>
+      <p>
         <label htmlFor="markdown">Markdown:</label>
         <br />
-        <Grid templateColumns="repeat(2, 1fr)">
-          <GridItem>
-            <Textarea
-              id="markdown"
-              rows={15}
-              name="markdown"
-              value={markdown}
-              onChange={e => {
-                setMarkdown(e.target.value);
-              }}
-            />
-          </GridItem>
-          <GridItem>
-            <MarkdownRender markdown={markdown} />
-          </GridItem>
-        </Grid>
-      </div>
-      <div>
+        <Textarea id="markdown" rows={15} name="markdown" colorScheme="twitter" />
+      </p>
+      <p>
         <Button type="submit" colorScheme="teal">
           Submit
         </Button>
-      </div>
+      </p>
     </Form>
   );
 }

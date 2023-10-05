@@ -36,7 +36,7 @@ export async function getPost(slug: string): Promise<Post> {
   const filepath = path.join(postsPath, slug + '.md');
   const { attribute: unsafeAttribute, content } = parseFrontMatter(filepath);
   const attribute = validateAttribute(unsafeAttribute);
-  return { slug, attribute, markdown: content, html: await renderMarkdown(content) };
+  return { slug, attribute, markdown: content, html: renderMarkdown(content) };
 }
 
 export async function getPosts(): Promise<Post[]> {

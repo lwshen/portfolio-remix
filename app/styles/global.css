@@ -34,10 +34,6 @@ html {
     color 0.2s;
 }
 
-.normalWidth {
-  max-width: 820px;
-}
-
 .smiley-sans {
   font-family: 'smiley-sans';
   -webkit-font-smoothing: antialiased;
