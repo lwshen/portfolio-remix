@@ -16,6 +16,7 @@ export default function AdminPage() {
   return (
     <div>
       <Link to="/auth/logout">Logout</Link>
+      <Link to="/admin/posts/new?view=full">Add new post</Link>
       <Outlet />
     </div>
   );

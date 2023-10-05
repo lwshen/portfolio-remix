@@ -1,14 +1,32 @@
 import hljs from 'highlight.js';
 import katex from 'katex';
 import { Marked } from 'marked';
+// @ts-ignore
 import markedKatex from 'marked-katex-extension';
+// @ts-ignore: 1479
+import rehypeStringify from 'rehype-stringify';
+// @ts-ignore: 1479
+import remarkParse from 'remark-parse';
+// @ts-ignore: 1479
+import remarkRehype from 'remark-rehype';
+// @ts-ignore: 1479
+import { unified } from 'unified';
 
 function highlight(code: string, lang: string) {
   const language = hljs.getLanguage(lang) ? lang : 'plaintext';
   return hljs.highlight(code, { language }).value;
 }
 
-export function renderMarkdown(content: string) {
+export async function renderMarkdown(content: string) {
+  const result = await unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeStringify)
+    .process(content);
+  return result.value.toString();
+}
+
+export function renderMarkdownOld(content: string) {
   const marked = new Marked();
 
   var renderer = new marked.Renderer();
