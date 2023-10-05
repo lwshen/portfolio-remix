@@ -1,3 +1,5 @@
+import { useSearchParams } from '@remix-run/react';
+
 import type { ReactNode } from 'react';
 import { Fragment } from 'react';
 
@@ -9,6 +11,9 @@ export interface AppLayoutProps {
 }
 
 export default function AppLayout({ children }: AppLayoutProps) {
+  const [searchParams] = useSearchParams();
+  const view = searchParams.get('view');
+
   return (
     <Fragment>
       <HomeHeader />
@@ -17,7 +22,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
           lineHeight: '1.4',
           margin: '0 auto',
           padding: '0 40px',
-          maxWidth: '820px',
+          maxWidth: view === 'full' ? undefined : '820px',
         }}
       >
         {children}
