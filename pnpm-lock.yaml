@@ -86,13 +86,13 @@ importers:
     devDependencies:
       '@remix-run/dev':
         specifier: ^2.0.1
-        version: 2.0.1(@remix-run/serve@2.0.1(typescript@5.2.2))(@types/node@20.8.7)(ts-node@10.9.1(@types/node@20.8.7)(typescript@5.2.2))(typescript@5.2.2)
+        version: 2.0.1(@remix-run/serve@2.0.1(typescript@5.2.2))(@types/node@22.5.3)(ts-node@10.9.1(@types/node@22.5.3)(typescript@5.2.2))(typescript@5.2.2)
       '@remix-run/eslint-config':
         specifier: ^2.0.1
         version: 2.0.1(eslint@8.50.0)(react@18.2.0)(typescript@5.2.2)
       '@tailwindcss/typography':
         specifier: ^0.5.10
-        version: 0.5.10(tailwindcss@3.3.3(ts-node@10.9.1(@types/node@20.8.7)(typescript@5.2.2)))
+        version: 0.5.10(tailwindcss@3.3.3(ts-node@10.9.1(@types/node@22.5.3)(typescript@5.2.2)))
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^4.2.0
         version: 4.2.0(prettier@3.0.3)
@@ -103,8 +103,8 @@ importers:
         specifier: ^5.0.2
         version: 5.0.2
       '@types/node':
-        specifier: ^20.8.7
-        version: 20.8.7
+        specifier: ^22.5.3
+        version: 22.5.3
       '@types/react':
         specifier: ^18.2.32
         version: 18.2.32
@@ -146,7 +146,7 @@ importers:
         version: 8.4.31
       postcss-cli:
         specifier: ^10.1.0
-        version: 10.1.0(postcss@8.4.31)(ts-node@10.9.1(@types/node@20.8.7)(typescript@5.2.2))
+        version: 10.1.0(postcss@8.4.31)(ts-node@10.9.1(@types/node@22.5.3)(typescript@5.2.2))
       postcss-import:
         specifier: ^15.1.0
         version: 15.1.0(postcss@8.4.31)
@@ -164,7 +164,7 @@ importers:
         version: 3.1.0(@remix-run/react@2.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.2.2))(@types/react-dom@18.2.8)(@types/react@18.2.32)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       tailwindcss:
         specifier: ^3.3.3
-        version: 3.3.3(ts-node@10.9.1(@types/node@20.8.7)(typescript@5.2.2))
+        version: 3.3.3(ts-node@10.9.1(@types/node@22.5.3)(typescript@5.2.2))
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -1801,6 +1801,9 @@ packages:
 
   '@types/node@20.8.7':
     resolution: {integrity: sha512-21TKHHh3eUHIi2MloeptJWALuCu5H7HQTdTrWIFReA8ad+aggoX+lRes3ex7/FtpC+sVUpFMQ+QTfYr74mruiQ==}
+
+  '@types/node@22.5.3':
+    resolution: {integrity: sha512-njripolh85IA9SQGTAqbmnNZTdxv7X/4OYGPz8tgy5JDr8MP+uDBa921GpYEoDDnwm0Hmn5ZPeJgiiSTPoOzkQ==}
 
   '@types/parse-json@4.0.0':
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
@@ -5179,6 +5182,9 @@ packages:
   undici-types@5.25.3:
     resolution: {integrity: sha512-Ga1jfYwRn7+cP9v8auvEXN1rX3sWqlayd4HP7OKk4mZWylEmu3KzXDUGrQUN6Ol7qo1gPvB2e5gX6udnyEPgdA==}
 
+  undici-types@6.19.8:
+    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
+
   unified@10.1.2:
     resolution: {integrity: sha512-pUSWAi/RAnVy1Pif2kAoeWNBa3JVrx0MId2LASj8G+7AiHWoKZNTomq6LG326T68U7/e263X6fTdcXIy7XnF7Q==}
 
@@ -7192,7 +7198,7 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.22.15
 
-  '@remix-run/dev@2.0.1(@remix-run/serve@2.0.1(typescript@5.2.2))(@types/node@20.8.7)(ts-node@10.9.1(@types/node@20.8.7)(typescript@5.2.2))(typescript@5.2.2)':
+  '@remix-run/dev@2.0.1(@remix-run/serve@2.0.1(typescript@5.2.2))(@types/node@22.5.3)(ts-node@10.9.1(@types/node@22.5.3)(typescript@5.2.2))(typescript@5.2.2)':
     dependencies:
       '@babel/core': 7.22.17
       '@babel/generator': 7.22.15
@@ -7205,7 +7211,7 @@ snapshots:
       '@npmcli/package-json': 4.0.1
       '@remix-run/server-runtime': 2.0.1(typescript@5.2.2)
       '@types/mdx': 2.0.7
-      '@vanilla-extract/integration': 6.2.2(@types/node@20.8.7)
+      '@vanilla-extract/integration': 6.2.2(@types/node@22.5.3)
       arg: 5.0.2
       cacache: 17.1.4
       chalk: 4.1.2
@@ -7231,7 +7237,7 @@ snapshots:
       pidtree: 0.6.0
       postcss: 8.4.31
       postcss-discard-duplicates: 5.1.0(postcss@8.4.31)
-      postcss-load-config: 4.0.1(postcss@8.4.31)(ts-node@10.9.1(@types/node@20.8.7)(typescript@5.2.2))
+      postcss-load-config: 4.0.1(postcss@8.4.31)(ts-node@10.9.1(@types/node@22.5.3)(typescript@5.2.2))
       postcss-modules: 6.0.0(postcss@8.4.31)
       prettier: 2.8.8
       pretty-ms: 7.0.1
@@ -7375,13 +7381,13 @@ snapshots:
 
   '@rushstack/eslint-patch@1.3.3': {}
 
-  '@tailwindcss/typography@0.5.10(tailwindcss@3.3.3(ts-node@10.9.1(@types/node@20.8.7)(typescript@5.2.2)))':
+  '@tailwindcss/typography@0.5.10(tailwindcss@3.3.3(ts-node@10.9.1(@types/node@22.5.3)(typescript@5.2.2)))':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.3.3(ts-node@10.9.1(@types/node@20.8.7)(typescript@5.2.2))
+      tailwindcss: 3.3.3(ts-node@10.9.1(@types/node@22.5.3)(typescript@5.2.2))
 
   '@testing-library/dom@8.20.1':
     dependencies:
@@ -7468,6 +7474,10 @@ snapshots:
   '@types/node@20.8.7':
     dependencies:
       undici-types: 5.25.3
+
+  '@types/node@22.5.3':
+    dependencies:
+      undici-types: 6.19.8
 
   '@types/parse-json@4.0.0': {}
 
@@ -7632,7 +7642,7 @@ snapshots:
       media-query-parser: 2.0.2
       outdent: 0.8.0
 
-  '@vanilla-extract/integration@6.2.2(@types/node@20.8.7)':
+  '@vanilla-extract/integration@6.2.2(@types/node@22.5.3)':
     dependencies:
       '@babel/core': 7.22.17
       '@babel/plugin-syntax-typescript': 7.22.5(@babel/core@7.22.17)
@@ -7645,8 +7655,8 @@ snapshots:
       lodash: 4.17.21
       mlly: 1.4.2
       outdent: 0.8.0
-      vite: 4.4.9(@types/node@20.8.7)
-      vite-node: 0.28.5(@types/node@20.8.7)
+      vite: 4.4.9(@types/node@22.5.3)
+      vite-node: 0.28.5(@types/node@22.5.3)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -10456,7 +10466,7 @@ snapshots:
       mlly: 1.4.2
       pathe: 1.1.1
 
-  postcss-cli@10.1.0(postcss@8.4.31)(ts-node@10.9.1(@types/node@20.8.7)(typescript@5.2.2)):
+  postcss-cli@10.1.0(postcss@8.4.31)(ts-node@10.9.1(@types/node@22.5.3)(typescript@5.2.2)):
     dependencies:
       chokidar: 3.5.3
       dependency-graph: 0.11.0
@@ -10465,7 +10475,7 @@ snapshots:
       globby: 13.2.2
       picocolors: 1.0.0
       postcss: 8.4.31
-      postcss-load-config: 4.0.1(postcss@8.4.31)(ts-node@10.9.1(@types/node@20.8.7)(typescript@5.2.2))
+      postcss-load-config: 4.0.1(postcss@8.4.31)(ts-node@10.9.1(@types/node@22.5.3)(typescript@5.2.2))
       postcss-reporter: 7.0.5(postcss@8.4.31)
       pretty-hrtime: 1.0.3
       read-cache: 1.0.0
@@ -10490,13 +10500,13 @@ snapshots:
       camelcase-css: 2.0.1
       postcss: 8.4.31
 
-  postcss-load-config@4.0.1(postcss@8.4.31)(ts-node@10.9.1(@types/node@20.8.7)(typescript@5.2.2)):
+  postcss-load-config@4.0.1(postcss@8.4.31)(ts-node@10.9.1(@types/node@22.5.3)(typescript@5.2.2)):
     dependencies:
       lilconfig: 2.1.0
       yaml: 2.3.2
     optionalDependencies:
       postcss: 8.4.31
-      ts-node: 10.9.1(@types/node@20.8.7)(typescript@5.2.2)
+      ts-node: 10.9.1(@types/node@22.5.3)(typescript@5.2.2)
 
   postcss-modules-extract-imports@3.0.0(postcss@8.4.31):
     dependencies:
@@ -11216,7 +11226,7 @@ snapshots:
 
   tailwind-merge@1.14.0: {}
 
-  tailwindcss@3.3.3(ts-node@10.9.1(@types/node@20.8.7)(typescript@5.2.2)):
+  tailwindcss@3.3.3(ts-node@10.9.1(@types/node@22.5.3)(typescript@5.2.2)):
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -11235,7 +11245,7 @@ snapshots:
       postcss: 8.4.31
       postcss-import: 15.1.0(postcss@8.4.31)
       postcss-js: 4.0.1(postcss@8.4.31)
-      postcss-load-config: 4.0.1(postcss@8.4.31)(ts-node@10.9.1(@types/node@20.8.7)(typescript@5.2.2))
+      postcss-load-config: 4.0.1(postcss@8.4.31)(ts-node@10.9.1(@types/node@22.5.3)(typescript@5.2.2))
       postcss-nested: 6.0.1(postcss@8.4.31)
       postcss-selector-parser: 6.0.13
       resolve: 1.22.4
@@ -11344,14 +11354,14 @@ snapshots:
       yn: 3.1.1
     optional: true
 
-  ts-node@10.9.1(@types/node@20.8.7)(typescript@5.2.2):
+  ts-node@10.9.1(@types/node@22.5.3)(typescript@5.2.2):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.9
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.8.7
+      '@types/node': 22.5.3
       acorn: 8.10.0
       acorn-walk: 8.2.0
       arg: 4.1.3
@@ -11446,6 +11456,8 @@ snapshots:
       which-boxed-primitive: 1.0.2
 
   undici-types@5.25.3: {}
+
+  undici-types@6.19.8: {}
 
   unified@10.1.2:
     dependencies:
@@ -11579,7 +11591,7 @@ snapshots:
       unist-util-stringify-position: 3.0.3
       vfile-message: 3.1.4
 
-  vite-node@0.28.5(@types/node@20.8.7):
+  vite-node@0.28.5(@types/node@22.5.3):
     dependencies:
       cac: 6.7.14
       debug: 4.3.4
@@ -11588,7 +11600,7 @@ snapshots:
       picocolors: 1.0.0
       source-map: 0.6.1
       source-map-support: 0.5.21
-      vite: 4.4.9(@types/node@20.8.7)
+      vite: 4.4.9(@types/node@22.5.3)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -11599,13 +11611,13 @@ snapshots:
       - supports-color
       - terser
 
-  vite@4.4.9(@types/node@20.8.7):
+  vite@4.4.9(@types/node@22.5.3):
     dependencies:
       esbuild: 0.18.20
       postcss: 8.4.31
       rollup: 3.29.1
     optionalDependencies:
-      '@types/node': 20.8.7
+      '@types/node': 22.5.3
       fsevents: 2.3.3
 
   wcwidth@1.0.1:
