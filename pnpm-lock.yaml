@@ -88,8 +88,8 @@ importers:
         specifier: ^2.0.1
         version: 2.0.1(@remix-run/serve@2.0.1(typescript@5.2.2))(@types/node@22.5.3)(ts-node@10.9.1(@types/node@22.5.3)(typescript@5.2.2))(typescript@5.2.2)
       '@remix-run/eslint-config':
-        specifier: ^2.0.1
-        version: 2.0.1(eslint@8.50.0)(react@18.2.0)(typescript@5.2.2)
+        specifier: ^2.11.2
+        version: 2.11.2(eslint@8.50.0)(react@18.2.0)(typescript@5.2.2)
       '@tailwindcss/typography':
         specifier: ^0.5.10
         version: 0.5.10(tailwindcss@3.3.3(ts-node@10.9.1(@types/node@22.5.3)(typescript@5.2.2)))
@@ -1640,8 +1640,8 @@ packages:
       typescript:
         optional: true
 
-  '@remix-run/eslint-config@2.0.1':
-    resolution: {integrity: sha512-XIKnID45O60Vtegsib2qJOVYBCq2VRn+3qaEAX1NtgcQDI1xD7o3k1k3MCdQqaGD9/XmcbJumkmuAIX3Ti6/mA==}
+  '@remix-run/eslint-config@2.11.2':
+    resolution: {integrity: sha512-IclP0pBI7cqmKhHqa6qWY0rAF7cXCM+xODuIkt9DpR6dvgDW3TpCTB4tqOavIYDsLGNkx1sPfkXjpe3FIrT9Xw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       eslint: ^8.0.0
@@ -7266,7 +7266,7 @@ snapshots:
       - ts-node
       - utf-8-validate
 
-  '@remix-run/eslint-config@2.0.1(eslint@8.50.0)(react@18.2.0)(typescript@5.2.2)':
+  '@remix-run/eslint-config@2.11.2(eslint@8.50.0)(react@18.2.0)(typescript@5.2.2)':
     dependencies:
       '@babel/core': 7.22.17
       '@babel/eslint-parser': 7.22.15(@babel/core@7.22.17)(eslint@8.50.0)
