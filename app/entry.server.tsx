@@ -5,7 +5,7 @@ import { RemixServer } from '@remix-run/react';
 
 import { renderToPipeableStream, renderToString } from 'react-dom/server';
 
-import isbot from 'isbot';
+import { isbot } from 'isbot';
 import { PassThrough } from 'stream';
 
 import { ServerStyleContext } from '~/context';
