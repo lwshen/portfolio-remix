@@ -13,12 +13,14 @@ export type User = {
 // strategies will return and will store in the session
 export const authenticator = new Authenticator<User>(sessionStorage);
 
-if (
-  !envConfig.AUTH0_CLIENT_ID ||
-  !envConfig.AUTH0_CLIENT_SECRET ||
-  !envConfig.AUTH0_ISSUER_BASE_URL
-) {
-  throw new Error('Missing required Auth0 environment variables');
+if (!envConfig.AUTH0_CLIENT_ID) {
+  throw new Error('Missing required environment variable: AUTH0_CLIENT_ID');
+}
+if (!envConfig.AUTH0_CLIENT_SECRET) {
+  throw new Error('Missing required environment variable: AUTH0_CLIENT_SECRET');
+}
+if (!envConfig.AUTH0_ISSUER_BASE_URL) {
+  throw new Error('Missing required environment variable: AUTH0_ISSUER_BASE_URL');
 }
 
 const auth0Strategy = new Auth0Strategy(
