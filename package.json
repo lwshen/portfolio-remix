@@ -28,7 +28,7 @@
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.8.0",
     "isbot": "^5.1.17",
-    "katex": "^0.16.11",
+    "katex": "^0.16.21",
     "logrocket": "^9.0.0",
     "marked": "^9.0.3",
     "marked-katex-extension": "^4.0.0",
