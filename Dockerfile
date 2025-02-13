@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY ./ .
 
-RUN npm install -g corepack
-RUN corepack enable
-RUN pnpm install --frozen-lockfile
-RUN pnpm run build
+RUN npm install -g corepack \
+  && corepack enable \
+  && pnpm install --frozen-lockfile \
+  && pnpm run build
 ENV NODE_ENV=production
 
 CMD ["pnpm", "run" ,"start"]
