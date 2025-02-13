@@ -82,5 +82,5 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "packageManager": "pnpm@9.9.0"
+  "packageManager": "pnpm@10.3.0"
 }
