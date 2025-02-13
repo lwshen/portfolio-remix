@@ -8,7 +8,7 @@ export const loader: LoaderFunction = async ({ request }) => {
   const profile = await authenticator.isAuthenticated(request);
 
   const url = new URL(request.url);
-  let returnTo = url.searchParams.get('redirect') ?? adminPath();
+  const returnTo = url.searchParams.get('redirect') ?? adminPath();
 
   if (profile) {
     throw redirect(returnTo);

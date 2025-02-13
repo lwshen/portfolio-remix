@@ -93,7 +93,7 @@ const Document = withEmotionCache(
 
     // get and store the color mode from the cookies.
     // It'll update the cookies if there isn't any and we have set a default value
-    let colorMode = useMemo(() => {
+    const colorMode = useMemo(() => {
       let color = getColorMode(data.cookies);
 
       if (!color && DEFAULT_COLOR_MODE) {
