@@ -97,7 +97,7 @@ export default function Home() {
         </div>
       </div>
       <p className="pt-4">
-        Hi 👋, I'm <span className={highlight}>Slinvent</span>, a curious{' '}
+        Hi 👋, I&apos;m <span className={highlight}>Slinvent</span>, a curious{' '}
         <span className={highlight}>Software Developer</span> located in Shanghai, China.
       </p>
       <p>

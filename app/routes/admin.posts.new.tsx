@@ -27,12 +27,12 @@ export default function NewPost() {
   return (
     <Form className="space-y-2" method="post">
       <p>
-        <label>
+        <label htmlFor="title">
           Post Title: <Input type="text" name="title" />
         </label>
       </p>
       <p>
-        <label>
+        <label htmlFor="slug">
           Post Slug: <Input type="text" name="slug" />
         </label>
       </p>

@@ -11,7 +11,7 @@ function highlight(code: string, lang: string) {
 export function renderMarkdown(content: string) {
   const marked = new Marked();
 
-  var renderer = new marked.Renderer();
+  const renderer = new marked.Renderer();
 
   renderer.link = function (href, title, text) {
     return `<a href="${href}" title="${title || text}" target="_blank">${text}</a>`;
@@ -63,10 +63,10 @@ function getLang(lang: string | undefined): string {
 }
 
 // copied from marked helpers
-const escapeTest: RegExp = /[&<>"']/;
-const escapeReplace: RegExp = new RegExp(escapeTest.source, 'g');
-const escapeTestNoEncode: RegExp = /[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/;
-const escapeReplaceNoEncode: RegExp = new RegExp(escapeTestNoEncode.source, 'g');
+const escapeTest = /[&<>"']/;
+const escapeReplace = new RegExp(escapeTest.source, 'g');
+const escapeTestNoEncode = /[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/;
+const escapeReplaceNoEncode = new RegExp(escapeTestNoEncode.source, 'g');
 const escapeReplacements: { [key: string]: string } = {
   '&': '&amp;',
   '<': '&lt;',
