@@ -1,4 +1,4 @@
-import { ChakraProvider, cookieStorageManagerSSR } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import { withEmotionCache } from '@emotion/react';
 import { json } from '@remix-run/node';
 import type { DataFunctionArgs, LinksFunction, MetaFunction } from '@remix-run/node';
@@ -144,9 +144,7 @@ const Document = withEmotionCache(
             className: `chakra-ui-${colorMode}`,
           })}
         >
-          <ChakraProvider colorModeManager={cookieStorageManagerSSR(data.cookies)} theme={theme}>
-            {children}
-          </ChakraProvider>
+          <ChakraProvider value={theme}>{children}</ChakraProvider>
           <ScrollRestoration />
           <Scripts />
           <LiveReload />
