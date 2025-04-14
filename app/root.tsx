@@ -1,4 +1,3 @@
-import { ChakraProvider, cookieStorageManagerSSR } from '@chakra-ui/react';
 import { withEmotionCache } from '@emotion/react';
 import { json } from '@remix-run/node';
 import type { DataFunctionArgs, LinksFunction, MetaFunction } from '@remix-run/node';
@@ -18,12 +17,12 @@ import { withDevTools } from 'remix-development-tools';
 import rdtStylesheet from 'remix-development-tools/index.css';
 
 import AppLayout from '~/components/layout/AppLayout';
+import { Provider } from '~/components/ui/provider';
 import { ClientStyleContext, ServerStyleContext } from '~/context';
 import type { PublicEnv } from '~/server/env.public.server';
 import env from '~/server/env.public.server';
 import globalStylesUrl from '~/styles/global.css';
 import tailwindStylesUrl from '~/styles/tailwind.css';
-import { theme } from '~/theme';
 
 import { getUserProfile } from './server/profile.server';
 
@@ -144,9 +143,7 @@ const Document = withEmotionCache(
             className: `chakra-ui-${colorMode}`,
           })}
         >
-          <ChakraProvider colorModeManager={cookieStorageManagerSSR(data.cookies)} theme={theme}>
-            {children}
-          </ChakraProvider>
+          <Provider>{children}</Provider>
           <ScrollRestoration />
           <Scripts />
           <LiveReload />
