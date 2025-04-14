@@ -15,9 +15,14 @@ export const links: LinksFunction = () => {
 export type AvatarProps = {
   imgUrl: string;
   fallback?: string;
-  size?: string;
+  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'full' | '2xs' | 'xs';
 };
 
 export default function Avatar({ imgUrl, fallback, size }: AvatarProps) {
-  return <AvatarWrap size={size || 'md'} name={fallback || ''} src={imgUrl} />;
+  return (
+    <AvatarWrap.Root size={size || 'md'}>
+      <AvatarWrap.Image src={imgUrl} />
+      <AvatarWrap.Fallback name={fallback} />
+    </AvatarWrap.Root>
+  );
 }

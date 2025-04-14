@@ -113,7 +113,12 @@ export default function Home() {
       <Separator />
       <p>
         Find me on{' '}
-        <Link textDecoration="underline" href="https://github.com/lwshen" isExternal>
+        <Link
+          textDecoration="underline"
+          href="https://github.com/lwshen"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <span className={blackTextColor}>Github</span> <ExternalLinkIcon mx="2px" />
         </Link>
       </p>
