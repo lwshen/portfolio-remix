@@ -9,3 +9,6 @@ node_modules
 /public/build
 
 .env
+
+# TypeScript incremental compilation cache
+*.tsbuildinfo
