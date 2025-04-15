@@ -1,6 +1,7 @@
-import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Box, Center, Separator as ChakraSeparator, Link } from '@chakra-ui/react';
 import type { LinksFunction } from '@remix-run/node';
+
+import { LuExternalLink } from 'react-icons/lu';
 
 import { useTheme } from 'next-themes';
 
@@ -122,7 +123,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span className={blackTextColor}>Github</span> <ExternalLinkIcon mx="2px" />
+          <span className={blackTextColor}>Github</span> <LuExternalLink />
         </Link>
       </p>
     </Box>

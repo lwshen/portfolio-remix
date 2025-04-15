@@ -1,5 +1,6 @@
-import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { AspectRatio, Card, Heading, Image, Link, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+
+import { LuExternalLink } from 'react-icons/lu';
 
 import DotfilesImage from '~/assets/image/project/dotfiles.png';
 import PortfolioImage from '~/assets/image/project/portfolio.png';
@@ -43,12 +44,12 @@ export default function Projects() {
                   <Text>{project.content}</Text>
                   {project.githubUrl && (
                     <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      Github <ExternalLinkIcon mx="2px" />
+                      Github <LuExternalLink />
                     </Link>
                   )}
                   {project.demoUrl && (
                     <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                      Demo <ExternalLinkIcon mx="2px" />
+                      Demo <LuExternalLink />
                     </Link>
                   )}
                 </Stack>
