@@ -1,6 +1,8 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { Box, Center, Divider, Link, useColorModeValue } from '@chakra-ui/react';
+import { Box, Center, Separator as ChakraSeparator, Link } from '@chakra-ui/react';
 import type { LinksFunction } from '@remix-run/node';
+
+import { useTheme } from 'next-themes';
 
 import AvatarImage from '~/assets/image/avatar.jpeg';
 import Avatar, { links as avatarLinks } from '~/components/home/Avatar';
@@ -21,7 +23,7 @@ const Separator = () => {
   return (
     <Center>
       <div className="w-40">
-        <Divider size="sm" orientation="horizontal" />
+        <ChakraSeparator size="sm" orientation="horizontal" />
       </div>
     </Center>
   );
@@ -84,7 +86,8 @@ export default function Home() {
     },
   ];
 
-  const blackTextColor = useColorModeValue('text-black', 'text-white');
+  const { theme } = useTheme();
+  const blackTextColor = theme === 'dark' ? 'text-white' : 'text-black';
   const highlight = `font-bold ${blackTextColor}`;
 
   return (
