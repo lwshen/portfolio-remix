@@ -1,15 +1,6 @@
-import { ExternalLinkIcon } from '@chakra-ui/icons';
-import {
-  AspectRatio,
-  Card,
-  CardBody,
-  Heading,
-  Img,
-  Link,
-  SimpleGrid,
-  Stack,
-  Text,
-} from '@chakra-ui/react';
+import { AspectRatio, Card, Heading, Image, Link, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+
+import { LuExternalLink } from 'react-icons/lu';
 
 import DotfilesImage from '~/assets/image/project/dotfiles.png';
 import PortfolioImage from '~/assets/image/project/portfolio.png';
@@ -35,30 +26,35 @@ export default function Projects() {
   return (
     <div>
       <Title>Projects</Title>
-      <SimpleGrid columns={2} spacing={10}>
+      <SimpleGrid columns={2} gap={10}>
         {projects.map((project, idx) => {
           return (
-            <Card key={idx} maxW="sm">
-              <CardBody>
+            <Card.Root key={idx} maxW="sm">
+              <Card.Body>
                 <AspectRatio maxW="sm" ratio={16 / 9}>
-                  <Img loading="eager" borderRadius="lg" src={project.previewImg} alt="Portfolio" />
+                  <Image
+                    loading="eager"
+                    borderRadius="lg"
+                    src={project.previewImg}
+                    alt="Portfolio"
+                  />
                 </AspectRatio>
-                <Stack mt="6" spacing="3">
+                <Stack mt="6" gap="3">
                   <Heading size="md">{project.title}</Heading>
                   <Text>{project.content}</Text>
                   {project.githubUrl && (
-                    <Link href={project.githubUrl} isExternal>
-                      Github <ExternalLinkIcon mx="2px" />
+                    <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      Github <LuExternalLink />
                     </Link>
                   )}
                   {project.demoUrl && (
-                    <Link href={project.demoUrl} isExternal>
-                      Demo <ExternalLinkIcon mx="2px" />
+                    <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                      Demo <LuExternalLink />
                     </Link>
                   )}
                 </Stack>
-              </CardBody>
-            </Card>
+              </Card.Body>
+            </Card.Root>
           );
         })}
       </SimpleGrid>
