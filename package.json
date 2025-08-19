@@ -30,7 +30,7 @@
     "isbot": "^5.1.17",
     "katex": "^0.16.21",
     "logrocket": "^9.0.0",
-    "marked": "^9.0.3",
+    "marked": "^9.1.6",
     "marked-katex-extension": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
